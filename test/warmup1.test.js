@@ -5,6 +5,7 @@ import { expect } from "chai";
 import sleepIn from "../src/warmup1/sleepIn.js";
 import monkeyTrouble from "../src/warmup1/monkeyTrouble.js";
 import sumDouble from "../src/warmup1/sumDouble.js";
+import diff21 from "../src/warmup1/diff21.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
@@ -53,6 +54,15 @@ describe("sumDouble function", () => {
 });
 
 //diff21 tests
-describe("diff21", () => {
-  it("returns the absolute difference between n and 21, but returns double the absolute difference if n is over 21", () => {});
+describe("diff21 function", () => {
+  it("returns the absolute difference between n and 21, but returns double the absolute difference if n is over 21", () => {
+    expect(diff21(19)).to.equal(2);
+    expect(diff21(10)).to.equal(11);
+    expect(diff21(21)).to.equal(0);
+    expect(diff21(22)).to.equal(2);
+    expect(diff21(25)).to.equal(8);
+    expect(diff21(-1)).to.equal(22);
+    expect(diff21(-2)).to.equal(23);
+    expect(diff21(50)).to.equal(58);
+  });
 });
