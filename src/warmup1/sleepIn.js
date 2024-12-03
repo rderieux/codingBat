@@ -14,7 +14,9 @@ in if it is not a weekday or we're on vacation. Return true if we sleep in.
 export default function sleepIn(weekday, vacation) {
   // if weekday is not true or vacation is true we sleep in,
   // else we do not sleep in
-  if (!weekday || vacation) {
+  if (typeof weekday !== "boolean" || typeof vacation !== "boolean") {
+    return "error";
+  } else if (!weekday || vacation) {
     return true;
   } else {
     return false;
