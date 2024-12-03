@@ -6,6 +6,7 @@ import sleepIn from "../src/warmup1/sleepIn.js";
 import monkeyTrouble from "../src/warmup1/monkeyTrouble.js";
 import sumDouble from "../src/warmup1/sumDouble.js";
 import diff21 from "../src/warmup1/diff21.js";
+import parrotTrouble from "../src/warmup1/parrotTrouble.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
@@ -77,5 +78,16 @@ describe("parrotTrouble function", () => {
     expect(parrotTrouble(false, 21)).to.equal(false);
     expect(parrotTrouble(true, 23)).to.equal(true);
     expect(parrotTrouble(false, 23)).to.equal(false);
+  });
+});
+
+//makes10
+describe("makes10 function", () => {
+  it("returns true if a = 10 or b = 10 or a + b = 10", () => {
+    expect(makes10(10, 1)).to.equal(true);
+    expect(makes10(2, 10)).to.equal(true);
+    expect(makes10(6, 4)).to.equal(true);
+    expect(makes10(7, 1)).to.equal(false);
+    expect(makes10(3, 3)).to.equal(false);
   });
 });
