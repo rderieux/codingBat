@@ -33,6 +33,7 @@ describe("sleepIn function", () => {
   });
 });
 
+//monkeyTrouble tests
 describe("monkeyTrouble function", () => {
   it("If both monkey's are smiling or no monkey's are smiling, it's bad", () => {
     expect(monkeyTrouble(true, true)).to.equal(true);
@@ -41,6 +42,7 @@ describe("monkeyTrouble function", () => {
   });
 });
 
+//sumDouble tests
 describe("sumDouble function", () => {
   it("Given two int values, return their sum, Unless the two values are the same, then return double their sum", () => {
     expect(sumDouble(1, 2)).to.equal(3);
@@ -48,4 +50,9 @@ describe("sumDouble function", () => {
     expect(sumDouble(2, 2)).to.equal(8);
     expect(sumDouble(-1, 0)).to.equal(-1);
   });
+});
+
+//diff21 tests
+describe("diff21", () => {
+  it("returns the absolute difference between n and 21, but returns double the absolute difference if n is over 21", () => {});
 });
