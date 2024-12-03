@@ -66,3 +66,16 @@ describe("diff21 function", () => {
     expect(diff21(50)).to.equal(58);
   });
 });
+
+//parrotTrouble
+describe("parrotTrouble function", () => {
+  it("returns true if the parrot is talking before 7 or after 20", () => {
+    expect(parrotTrouble(true, 6)).to.equal(true);
+    expect(parrotTrouble(true, 7)).to.equal(false);
+    expect(parrotTrouble(false, 6)).to.equal(false);
+    expect(parrotTrouble(true, 21)).to.equal(true);
+    expect(parrotTrouble(false, 21)).to.equal(false);
+    expect(parrotTrouble(true, 23)).to.equal(true);
+    expect(parrotTrouble(false, 23)).to.equal(false);
+  });
+});
