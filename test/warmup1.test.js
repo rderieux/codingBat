@@ -8,6 +8,7 @@ import sumDouble from "../src/warmup1/sumDouble.js";
 import diff21 from "../src/warmup1/diff21.js";
 import parrotTrouble from "../src/warmup1/parrotTrouble.js";
 import makes10 from "../src/warmup1/makes10.js";
+import nearHundred from "../src/warmup1/nearHundred.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
