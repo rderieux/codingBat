@@ -130,3 +130,13 @@ describe("notString function", () => {
     expect(notString("not")).to.equal("not");
   });
 });
+
+//missingChar
+describe("missingChar function", () => {
+  it("returns a string where the char at index n has been removed", () => {
+    expect(missingChar("robert", 0)).to.equal("obert");
+    expect(missingChar("robert", 1)).to.equal("rbert");
+    expect(missingChar("robert", 5)).to.equal("rober");
+    expect(missingChar("chocolate", 8)).to.equal("chocolat");
+  });
+});
