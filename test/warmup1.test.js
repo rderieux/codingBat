@@ -9,6 +9,7 @@ import diff21 from "../src/warmup1/diff21.js";
 import parrotTrouble from "../src/warmup1/parrotTrouble.js";
 import makes10 from "../src/warmup1/makes10.js";
 import nearHundred from "../src/warmup1/nearHundred.js";
+import posNeg from "../src/warmup1/posNeg.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
@@ -114,5 +115,6 @@ describe("posNeg function", () => {
     expect(posNeg(-1, -1, true)).to.equal(true);
     expect(posNeg(-1, 1, true)).to.equal(false);
     expect(posNeg(1, 1, true)).to.equal(false);
+    expect(posNeg(-1, -1, false)).to.equal(false);
   });
 });
