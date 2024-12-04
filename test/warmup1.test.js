@@ -154,3 +154,15 @@ describe("frontBack function", () => {
     expect(frontBack("")).to.equal("");
   });
 });
+
+//front3
+describe("front3 function", () => {
+  it("returns a str of the first 3 char of the provided str 3 times.  Whatever is provided if less than 3.", () => {
+    expect(front3("ar")).to.equal("ararar");
+    expect(front3("bar")).to.equal("barbarbar");
+    expect(front3("robert")).to.equal("robrobrob");
+    expect(front3("Chocolate")).to.equal("ChoChoCho");
+    expect(front3("b")).to.equal("bbb");
+    expect(front3("")).to.equal("");
+  });
+});
