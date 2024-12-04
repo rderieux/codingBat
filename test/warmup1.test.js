@@ -92,3 +92,15 @@ describe("makes10 function", () => {
     expect(makes10(3, 3)).to.equal(false);
   });
 });
+
+//nearHundred
+describe("nearHundred function", () => {
+  it("returns true when n is within 10 of 100 or 200", () => {
+    expect(nearHundred(91)).to.equal(true);
+    expect(nearHundred(50)).to.equal(false);
+    expect(nearHundred(199)).to.equal(true);
+    expect(nearHundred(110)).to.equal(true);
+    expect(nearHundred(111)).to.equal(false);
+    expect(nearHundred(189)).to.equal(false);
+  });
+});
