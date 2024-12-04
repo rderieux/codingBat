@@ -12,6 +12,7 @@ import nearHundred from "../src/warmup1/nearHundred.js";
 import posNeg from "../src/warmup1/posNeg.js";
 import notString from "../src/warmup1/notString.js";
 import missingChar from "../src/warmup1/missingChar.js";
+import frontBack from "../src/warmup1/frontBack.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
