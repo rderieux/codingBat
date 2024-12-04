@@ -11,6 +11,7 @@ import makes10 from "../src/warmup1/makes10.js";
 import nearHundred from "../src/warmup1/nearHundred.js";
 import posNeg from "../src/warmup1/posNeg.js";
 import notString from "../src/warmup1/notString.js";
+import missingChar from "../src/warmup1/missingChar.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
@@ -138,5 +139,17 @@ describe("missingChar function", () => {
     expect(missingChar("robert", 1)).to.equal("rbert");
     expect(missingChar("robert", 5)).to.equal("rober");
     expect(missingChar("chocolate", 8)).to.equal("chocolat");
+  });
+});
+
+//frontBack
+describe("frontBack function", () => {
+  it("returns a new string witch the first and last chars have been exchanged", () => {
+    expect(frontBack("hello")).to.equal("oellh");
+    expect(frontBack("a")).to.equal("a");
+    expect(frontBack("ab")).to.equal("ba");
+    expect(frontBack("silent")).to.equal("tilens");
+    expect(frontBack("hello")).to.equal("oellh");
+    expect(frontBack("")).to.equal("");
   });
 });
