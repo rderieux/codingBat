@@ -105,3 +105,14 @@ describe("nearHundred function", () => {
     expect(nearHundred(189)).to.equal(false);
   });
 });
+
+//posNeg
+describe("posNeg function", () => {
+  it("returns true when a or b is negative, unless negative parameter is true, then both need to be negative to return true", () => {
+    expect(posNeg(-1, 1, false)).to.equal(true);
+    expect(posNeg(1, -1, false)).to.equal(true);
+    expect(posNeg(-1, -1, true)).to.equal(true);
+    expect(posNeg(-1, 1, true)).to.equal(false);
+    expect(posNeg(1, 1, true)).to.equal(false);
+  });
+});
