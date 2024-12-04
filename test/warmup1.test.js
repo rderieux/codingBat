@@ -10,6 +10,7 @@ import parrotTrouble from "../src/warmup1/parrotTrouble.js";
 import makes10 from "../src/warmup1/makes10.js";
 import nearHundred from "../src/warmup1/nearHundred.js";
 import posNeg from "../src/warmup1/posNeg.js";
+import notString from "../src/warmup1/notString.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
@@ -126,5 +127,6 @@ describe("notString function", () => {
     expect(notString("not string")).to.equal("not string");
     expect(notString("a longer string")).to.equal("not a longer string");
     expect(notString("a not")).to.equal("not a not");
+    expect(notString("not")).to.equal("not");
   });
 });
