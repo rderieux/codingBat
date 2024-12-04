@@ -118,3 +118,13 @@ describe("posNeg function", () => {
     expect(posNeg(-1, -1, false)).to.equal(false);
   });
 });
+
+//notString
+describe("notString function", () => {
+  it("returns a string unchanged if it starts with not, otherwise adds not to the beginning.", () => {
+    expect(notString("string")).to.equal("not string");
+    expect(notString("not string")).to.equal("not string");
+    expect(notString("a longer string")).to.equal("not a longer string");
+    expect(notString("a not")).to.equal("not a not");
+  });
+});
