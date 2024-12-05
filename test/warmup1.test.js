@@ -20,6 +20,7 @@ import front22 from "../src/warmup1/front22.js";
 import startHi from "../src/warmup1/startHi.js";
 import icyHot from "../src/warmup1/icyHot.js";
 import in1020 from "../src/warmup1/in1020.js";
+import hasTeen from "../src/warmup1/hasTeen.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
@@ -241,10 +242,19 @@ describe("in1020 function", () => {
 describe("hasTeen function", () => {
   it("returns true if one of 3 int arguments is between 13-19 inclusive.", () => {
     expect(hasTeen(1, 2, 3)).to.equal(false);
-    expect(hasTeen(1, 17, 18)).to.equal(false);
+    expect(hasTeen(1, 17, 18)).to.equal(true);
     expect(hasTeen(13, 15, 19)).to.equal(true);
     expect(hasTeen(12, 20, 21)).to.equal(false);
     expect(hasTeen(21, 22, 23)).to.equal(false);
     expect(hasTeen(-13, 2, -19)).to.equal(false);
+  });
+});
+
+describe("loneTeen function", () => {
+  it("returns true if one of two int args are in range 13-19 inclusive, else false", () => {
+    expect(loneTeen(13, 14)).to.equal(false);
+    expect(loneTeen(13, 1)).to.equal(true);
+    expect(loneTeen(15, 20)).to.equal(true);
+    expect(loneTeen(16, 18)).to.equal(false);
   });
 });
