@@ -18,6 +18,7 @@ import backAround from "../src/warmup1/backAround.js";
 import or35 from "../src/warmup1/or35.js";
 import front22 from "../src/warmup1/front22.js";
 import startHi from "../src/warmup1/startHi.js";
+import icyHot from "../src/warmup1/icyHot.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
