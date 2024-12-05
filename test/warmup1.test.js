@@ -226,3 +226,13 @@ describe("icyHot function", () => {
     expect(icyHot(50, 100)).to.equal(false);
   });
 });
+
+describe("in1020 function", () => {
+  it("returns true if either number is within the 10 to 20 range.", () => {
+    expect(in1020(-2, 10)).to.equal(true);
+    expect(in1020(-2, 21)).to.equal(false);
+    expect(in1020(15, 20)).to.equal(true);
+    expect(in1020(9, 21)).to.equal(false);
+    expect(in1020(21, 8)).to.equal(false);
+  });
+});
