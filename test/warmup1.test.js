@@ -202,3 +202,13 @@ describe("front22 function", () => {
     expect(front22("")).to.equal("");
   });
 });
+
+describe("startHi function", () => {
+  test("Given a string, return true if the string starts with 'hi', otherwise false", () => {
+    expect(startHi("hi")).to.equal(true);
+    expect(startHi("hello there")).to.equal(false);
+    expect(startHi("hi hello")).to.equal(true);
+    expect(startHi("hihihi")).to.equal(true);
+    expect(startHi("hahaha")).to.equal(false);
+  });
+});
