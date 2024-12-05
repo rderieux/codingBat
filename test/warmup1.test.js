@@ -213,3 +213,15 @@ describe("startHi function", () => {
     expect(startHi("hahaha")).to.equal(false);
   });
 });
+
+describe("icyHot function", () => {
+  it("returns true if one temp is below 0 and the other is above 100.", () => {
+    expect(icyHot(-1, 100)).to.equal(false);
+    expect(icyHot(-1, 101)).to.equal(true);
+    expect(icyHot(0, 101)).to.equal(false);
+    expect(icyHot(-100, 200)).to.equal(true);
+    expect(icyHot(-50, 100)).to.equal(false);
+    expect(icyHot(-50, -100)).to.equal(false);
+    expect(icyHot(50, 100)).to.equal(false);
+  });
+});
