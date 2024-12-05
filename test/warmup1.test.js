@@ -16,6 +16,7 @@ import frontBack from "../src/warmup1/frontBack.js";
 import front3 from "../src/warmup1/front3.js";
 import backAround from "../src/warmup1/backAround.js";
 import or35 from "../src/warmup1/or35.js";
+import front22 from "../src/warmup1/front22.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
