@@ -237,3 +237,14 @@ describe("in1020 function", () => {
     expect(in1020(21, 8)).to.equal(false);
   });
 });
+
+describe("hasTeen function", () => {
+  it("returns true if one of 3 int arguments is between 13-19 inclusive.", () => {
+    expect(hasTeen(1, 2, 3)).to.equal(false);
+    expect(hasTeen(1, 17, 18)).to.equal(false);
+    expect(hasTeen(13, 15, 19)).to.equal(true);
+    expect(hasTeen(12, 20, 21)).to.equal(false);
+    expect(hasTeen(21, 22, 23)).to.equal(false);
+    expect(hasTeen(-13, 2, -19)).to.equal(false);
+  });
+});
