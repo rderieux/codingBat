@@ -14,6 +14,7 @@ import notString from "../src/warmup1/notString.js";
 import missingChar from "../src/warmup1/missingChar.js";
 import frontBack from "../src/warmup1/frontBack.js";
 import front3 from "../src/warmup1/front3.js";
+import backAround from "../src/warmup1/backAround.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
@@ -175,5 +176,17 @@ describe("backAround function", () => {
     expect(backAround("a")).to.equal("aaa");
     expect(backAround("barf")).to.equal("fbarff");
     expect(backAround("read")).to.equal("dreadd");
+  });
+});
+
+//or35
+describe("or35 function", () => {
+  it("returns true if the given non-negative number is a multiple of 3 or a multiple of 5.", () => {
+    expect(or35(3)).to.equal(true);
+    expect(or35(5)).to.equal(true);
+    expect(or35(6)).to.equal(true);
+    expect(or35(15)).to.equal(true);
+    expect(or35(2)).to.equal(false);
+    expect(or35(4)).to.equal(false);
   });
 });
