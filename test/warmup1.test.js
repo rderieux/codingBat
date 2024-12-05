@@ -191,3 +191,13 @@ describe("or35 function", () => {
     expect(or35(4)).to.equal(false);
   });
 });
+
+describe("front22 function", () => {
+  it("given a string, returns a string with the first 2 chars appended and prepended.", () => {
+    expect(front22("hobert")).to.equal("hohobertho");
+    expect(front22("bert")).to.equal("bebertbe");
+    expect(front22("ha")).to.equal("hahaha");
+    expect(front22("b")).to.equal("bbb");
+    expect(front22("")).to.equal("");
+  });
+});
