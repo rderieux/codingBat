@@ -17,6 +17,7 @@ import front3 from "../src/warmup1/front3.js";
 import backAround from "../src/warmup1/backAround.js";
 import or35 from "../src/warmup1/or35.js";
 import front22 from "../src/warmup1/front22.js";
+import startHi from "../src/warmup1/startHi.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
@@ -204,7 +205,7 @@ describe("front22 function", () => {
 });
 
 describe("startHi function", () => {
-  test("Given a string, return true if the string starts with 'hi', otherwise false", () => {
+  it("Given a string, return true if the string starts with 'hi', otherwise false", () => {
     expect(startHi("hi")).to.equal(true);
     expect(startHi("hello there")).to.equal(false);
     expect(startHi("hi hello")).to.equal(true);
