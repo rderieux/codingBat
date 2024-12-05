@@ -167,3 +167,13 @@ describe("front3 function", () => {
     expect(front3("")).to.equal("");
   });
 });
+
+//backAround
+describe("backAround function", () => {
+  it("returns a string with the last character of the string added to the front and back of the string", () => {
+    expect(backAround("arf")).to.equal("farff");
+    expect(backAround("a")).to.equal("aaa");
+    expect(backAround("barf")).to.equal("fbarff");
+    expect(backAround("read")).to.equal("dreadd");
+  });
+});
