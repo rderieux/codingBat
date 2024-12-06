@@ -271,3 +271,13 @@ describe("delDel function", () => {
     expect(delDel("")).to.equal("");
   });
 });
+
+describe("mixStart function", () => {
+  it("returns true if the given string begins with 'mix', except the m can be anything.", () => {
+    expect(mixStart("mix")).to.equal(true);
+    expect(mixStart("bix")).to.equal(true);
+    expect(mixStart("tix")).to.equal(true);
+    expect(mixStart("miz")).to.equal(false);
+    expect(mixStart("wiz")).to.equal(false);
+  });
+});
