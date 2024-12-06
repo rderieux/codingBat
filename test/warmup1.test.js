@@ -24,6 +24,7 @@ import hasTeen from "../src/warmup1/hasTeen.js";
 import loneTeen from "../src/warmup1/loneTeen.js";
 import delDel from "../src/warmup1/delDel.js";
 import mixStart from "../src/warmup1/mixStart.js";
+import startOz from "../src/warmup1/startOz.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
