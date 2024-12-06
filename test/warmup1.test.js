@@ -355,3 +355,14 @@ describe("lastDigit function", () => {
     expect(lastDigit(11, 12)).to.equal(false);
   });
 });
+
+describe("endUp function", () => {
+  it("returns the last three chars of a string in uppercase, if less than 3 chars uppercase what is there.", () => {
+    expect(endUp("a")).to.equal("A");
+    expect(endUp("aa")).to.equal("AA");
+    expect(endUp("aaa")).to.equal("AAA");
+    expect(endUp("Hello idjot")).to.equal("Hello idJOT");
+    expect(endUp("Howdy Duty")).to.equal("Howdy DUTY");
+    expect(endUp("Golem")).to.equal("GoLEM");
+  });
+});
