@@ -343,3 +343,14 @@ describe("stringE function", () => {
     expect(stringE("Watchu talkin' bout, Willis?")).to.equal(false);
   });
 });
+
+describe("lastDigit function", () => {
+  it("returns true if - out of two ints- have the same last digit, else false.", () => {
+    expect(lastDigit(7, 17)).to.equal(true);
+    expect(lastDigit(0, 10)).to.equal(true);
+    expect(lastDigit(3, 11)).to.equal(false);
+    expect(lastDigit(3, 113)).to.equal(true);
+    expect(lastDigit(1004, 14)).to.equal(true);
+    expect(lastDigit(11, 12)).to.equal(false);
+  });
+});

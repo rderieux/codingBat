@@ -1,3 +1,8 @@
+/**
+ *
+ * @param {string} str
+ * @returns true if str contains 1-3 e chars, false if it doesn't.
+ */
 export default function stringE(str) {
   // Declare a count variable for e
   let eCount = 0;
