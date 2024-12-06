@@ -293,3 +293,13 @@ describe("startOz function", () => {
     expect(startOz("zzzz")).to.equal("z");
   });
 });
+
+describe("intMax function", () => {
+  it("returns the largest of 3 ints", () => {
+    expect(intMax(1, 2, 3)).to.equal(3);
+    expect(intMax(100, 200, 300)).to.equal(300);
+    expect(intMax(-1, -2, -3)).to.equal(-1);
+    expect(intMax(3, 2, 1)).to.equal(3);
+    expect(intMax(0, 0.1, 0.2)).to.equal(0.2);
+  });
+});
