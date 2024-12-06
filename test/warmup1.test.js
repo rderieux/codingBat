@@ -282,3 +282,13 @@ describe("mixStart function", () => {
     expect(mixStart("wiz")).to.equal(false);
   });
 });
+
+describe("startOz function", () => {
+  it("returns the first two chars of a string if present, only return o if it's the first char, and only return z if it's the second char.", () => {
+    expect(startOz("obo")).to.equal("o");
+    expect(startOz("ozWiz")).to.equal("oz");
+    expect(startOz("tziki")).to.equal("z");
+    expect(startOz("")).to.equal("");
+    expect(startOz("zzzz")).to.equal("z");
+  });
+});
