@@ -26,6 +26,7 @@ import delDel from "../src/warmup1/delDel.js";
 import mixStart from "../src/warmup1/mixStart.js";
 import startOz from "../src/warmup1/startOz.js";
 import intMax from "../src/warmup1/intMax.js";
+import close10 from "../src/warmup1/close10.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
@@ -303,5 +304,16 @@ describe("intMax function", () => {
     expect(intMax(3, 2, 1)).to.equal(3);
     expect(intMax(0, 5, 10)).to.equal(10);
     expect(intMax(3, 3, 3)).to.equal(3);
+  });
+});
+
+describe("close10 funciton", () => {
+  it("return whichever int value is closest to 10, or 0 if it's a tie.", () => {
+    expect(close10(9, 9)).to.equal(0);
+    expect(close10(8, 9)).to.equal(9);
+    expect(close10(8, 7)).to.equal(8);
+    expect(close10(11, 9)).to.equal(0);
+    expect(close10(21, 8)).to.equal(8);
+    expect(close10(13, 6)).to.equal(13);
   });
 });

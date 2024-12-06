@@ -1,3 +1,10 @@
+/**
+ *
+ * @param {number} a
+ * @param {number} b
+ * @param {number} c
+ * @returns the largest of 3 ints.
+ */
 export default function intMax(a, b, c) {
   // Create variable to assign largest int
   // if a is greater than or equal b, assign to largest int
