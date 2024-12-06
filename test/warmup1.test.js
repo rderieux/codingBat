@@ -23,6 +23,7 @@ import in1020 from "../src/warmup1/in1020.js";
 import hasTeen from "../src/warmup1/hasTeen.js";
 import loneTeen from "../src/warmup1/loneTeen.js";
 import delDel from "../src/warmup1/delDel.js";
+import mixStart from "../src/warmup1/mixStart.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
