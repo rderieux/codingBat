@@ -25,6 +25,7 @@ import loneTeen from "../src/warmup1/loneTeen.js";
 import delDel from "../src/warmup1/delDel.js";
 import mixStart from "../src/warmup1/mixStart.js";
 import startOz from "../src/warmup1/startOz.js";
+import intMax from "../src/warmup1/intMax.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
@@ -300,6 +301,7 @@ describe("intMax function", () => {
     expect(intMax(100, 200, 300)).to.equal(300);
     expect(intMax(-1, -2, -3)).to.equal(-1);
     expect(intMax(3, 2, 1)).to.equal(3);
-    expect(intMax(0, 0.1, 0.2)).to.equal(0.2);
+    expect(intMax(0, 5, 10)).to.equal(10);
+    expect(intMax(3, 3, 3)).to.equal(3);
   });
 });

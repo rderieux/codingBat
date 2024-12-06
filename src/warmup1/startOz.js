@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {string} str
+ * @returns a string. If the first char is o, returns o
+ * if the second character is z returns z.
+ */
 export default function startOz(str) {
   // If first char is o add to return str
   // if second char is z add to return str
