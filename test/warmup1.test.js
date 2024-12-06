@@ -259,3 +259,14 @@ describe("loneTeen function", () => {
     expect(loneTeen(16, 18)).to.equal(false);
   });
 });
+
+describe("delDel function", () => {
+  it("deletes del from a string if it appears at index 1, otherwise return unchanged str", () => {
+    expect(delDel("idel")).to.equal("i");
+    expect(delDel("infidel")).to.equal("infidel");
+    expect(delDel("odel")).to.equal("0");
+    expect(delDel("abc")).to.equal("abc");
+    expect(delDel("adelpff")).to.equal("apff");
+    expect(delDel("")).to.equal("");
+  });
+});
