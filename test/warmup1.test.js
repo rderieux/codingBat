@@ -30,6 +30,7 @@ import close10 from "../src/warmup1/close10.js";
 import max1020 from "../src/warmup1/max1020.js";
 import stringE from "../src/warmup1/stringE.js";
 import lastDigit from "../src/warmup1/lastDigit.js";
+import endUp from "../src/warmup1/endUp.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
