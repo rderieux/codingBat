@@ -29,6 +29,7 @@ import intMax from "../src/warmup1/intMax.js";
 import close10 from "../src/warmup1/close10.js";
 import max1020 from "../src/warmup1/max1020.js";
 import stringE from "../src/warmup1/stringE.js";
+import lastDigit from "../src/warmup1/lastDigit.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
@@ -345,7 +346,7 @@ describe("stringE function", () => {
 });
 
 describe("lastDigit function", () => {
-  it("returns true if - out of two ints- have the same last digit, else false.", () => {
+  it("returns true if - out of two ints - have the same last digit, else false.", () => {
     expect(lastDigit(7, 17)).to.equal(true);
     expect(lastDigit(0, 10)).to.equal(true);
     expect(lastDigit(3, 11)).to.equal(false);
