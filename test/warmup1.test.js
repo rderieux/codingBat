@@ -317,3 +317,15 @@ describe("close10 funciton", () => {
     expect(close10(13, 6)).to.equal(13);
   });
 });
+
+describe("max1020 function", () => {
+  it("returns the larger value that is in the range 10-20 inclusive, or 0 if neither is in that range.", () => {
+    expect(max1020(0, 11)).to.equal(11);
+    expect(max1020(13, 11)).to.equal(13);
+    expect(max1020(1, 9)).to.equal(0);
+    expect(max1020(10, 20)).to.equal(20);
+    expect(max1020(12, 19)).to.equal(19);
+    expect(max1020(11, 11)).to.equal(11);
+    expect(max1020(9, 21)).to.equal(0);
+  });
+});
