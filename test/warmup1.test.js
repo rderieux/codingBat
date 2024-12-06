@@ -330,3 +330,15 @@ describe("max1020 function", () => {
     expect(max1020(9, 21)).to.equal(0);
   });
 });
+
+describe("stringE function", () => {
+  it("returns true if the given string has between 1 and 3 'e' chars", () => {
+    expect(stringE("Hello")).to.equal(true);
+    expect(stringE("Hello you cheese eater")).to.equal(false);
+    expect(stringE("Hi, elephant")).to.equal(true);
+    expect(stringE("Give me")).to.equal(true);
+    expect(stringE("Hi")).to.equal(false);
+    expect(stringE("")).to.equal(false);
+    expect(stringE("Watchu talkin' bout, Willis?")).to.equal(false);
+  });
+});
