@@ -22,6 +22,7 @@ import icyHot from "../src/warmup1/icyHot.js";
 import in1020 from "../src/warmup1/in1020.js";
 import hasTeen from "../src/warmup1/hasTeen.js";
 import loneTeen from "../src/warmup1/loneTeen.js";
+import delDel from "../src/warmup1/delDel.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
@@ -264,7 +265,7 @@ describe("delDel function", () => {
   it("deletes del from a string if it appears at index 1, otherwise return unchanged str", () => {
     expect(delDel("idel")).to.equal("i");
     expect(delDel("infidel")).to.equal("infidel");
-    expect(delDel("odel")).to.equal("0");
+    expect(delDel("odel")).to.equal("o");
     expect(delDel("abc")).to.equal("abc");
     expect(delDel("adelpff")).to.equal("apff");
     expect(delDel("")).to.equal("");
