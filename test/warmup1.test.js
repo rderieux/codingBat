@@ -28,6 +28,7 @@ import startOz from "../src/warmup1/startOz.js";
 import intMax from "../src/warmup1/intMax.js";
 import close10 from "../src/warmup1/close10.js";
 import max1020 from "../src/warmup1/max1020.js";
+import stringE from "../src/warmup1/stringE.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
