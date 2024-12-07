@@ -367,3 +367,14 @@ describe("endUp function", () => {
     expect(endUp("Golem")).to.equal("GoLEM");
   });
 });
+
+describe("everyNth function", () => {
+  it("returns a str where char[0] and count n for each character through the string.  If n is 3, use 0, 3, 6, etc.", () => {
+    expect("Robert", 2).to.equal("Rbr");
+    expect("Telephone", 3).to.equal("Teo");
+    expect("Robert", 2).to.equal("Rbr");
+    expect("Manbert", 5).to.equal("Mr");
+    expect("Chocolates", 4).to.equal("Coe");
+    expect("Chocolates", 100).to.equal("C");
+  });
+});
