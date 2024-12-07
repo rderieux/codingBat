@@ -1,5 +1,7 @@
 import { expect } from "chai";
 
+import stringTimes from "../src/warmup2/stringTimes.js";
+
 describe("stringTimes function", () => {
   it("returns a str of a given str n times in a new str", () => {
     expect(stringTimes("Hi", 4)).to.equal("HiHiHiHi");
