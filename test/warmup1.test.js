@@ -31,6 +31,7 @@ import max1020 from "../src/warmup1/max1020.js";
 import stringE from "../src/warmup1/stringE.js";
 import lastDigit from "../src/warmup1/lastDigit.js";
 import endUp from "../src/warmup1/endUp.js";
+import everyNth from "../src/warmup1/everyNth.js";
 
 // sleepIn function tests
 describe("sleepIn function", () => {
@@ -370,11 +371,11 @@ describe("endUp function", () => {
 
 describe("everyNth function", () => {
   it("returns a str where char[0] and count n for each character through the string.  If n is 3, use 0, 3, 6, etc.", () => {
-    expect("Robert", 2).to.equal("Rbr");
-    expect("Telephone", 3).to.equal("Teo");
-    expect("Robert", 2).to.equal("Rbr");
-    expect("Manbert", 5).to.equal("Mr");
-    expect("Chocolates", 4).to.equal("Coe");
-    expect("Chocolates", 100).to.equal("C");
+    expect(everyNth("Robert", 2)).to.equal("Rbr");
+    expect(everyNth("Telephone", 3)).to.equal("Teo");
+    expect(everyNth("Robert", 2)).to.equal("Rbr");
+    expect(everyNth("Manbert", 5)).to.equal("Mr");
+    expect(everyNth("Chocolates", 4)).to.equal("Coe");
+    expect(everyNth("Chocolates", 100)).to.equal("C");
   });
 });
