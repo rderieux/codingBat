@@ -44,3 +44,23 @@ describe("doubleX function", () => {
     expect(doubleX("rox")).to.equal(false);
   });
 });
+
+describe("stringBits function", () => {
+  it("returns a new str from given str of every other char, starting with the first", () => {
+    describe("Robert to be Rbr", () => {
+      expect(stringBits("Robert")).to.equal("Rbr");
+    });
+    describe("Hello to be Hlo", () => {
+      expect(stringBits("Hello")).to.equal("Hlo");
+    });
+    describe("Well well well to be Wl elwl", () => {
+      expect(stringBits("Well well well")).to.equal("Wl elwl");
+    });
+    describe("Pi to be P", () => {
+      expect(stringBits("Pi")).to.equal("p");
+    });
+    describe("Empty str to be empty str", () => {
+      expect(stringBits("")).to.equal("");
+    });
+  });
+});
