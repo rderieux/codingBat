@@ -3,6 +3,7 @@ import { expect } from "chai";
 import stringTimes from "../src/warmup2/stringTimes.js";
 import frontTimes from "../src/warmup2/frontTimes.js";
 import countXX from "../src/warmup2/countXX.js";
+import doubleX from "../src/warmup2/doubleX.js";
 
 describe("stringTimes function", () => {
   it("returns a str of a given str n times in a new str", () => {
