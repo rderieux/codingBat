@@ -32,3 +32,14 @@ describe("countXX function", () => {
     expect(countXX("XxXxXxXxX")).to.equal(8);
   });
 });
+
+describe("doubleX function", () => {
+  it("return a boolean, if the first instance of x appearing in a string is followed by another x, return true, else false.", () => {
+    expect(doubleX("axxbb")).to.equal(true);
+    expect(doubleX("axbb")).to.equal(false);
+    expect(doubleX("xxxx")).to.equal(true);
+    expect(doubleX("xox")).to.equal(false);
+    expect(doubleX("raxx")).to.equal(true);
+    expect(doubleX("rox")).to.equal(false);
+  });
+});
