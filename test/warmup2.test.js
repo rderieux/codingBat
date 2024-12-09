@@ -2,6 +2,7 @@ import { expect } from "chai";
 
 import stringTimes from "../src/warmup2/stringTimes.js";
 import frontTimes from "../src/warmup2/frontTimes.js";
+import countXX from "../src/warmup2/countXX.js";
 
 describe("stringTimes function", () => {
   it("returns a str of a given str n times in a new str", () => {
@@ -21,12 +22,13 @@ describe("frontTimes function", () => {
   });
 });
 
-describe("contXX function", () => {
+describe("countXX function", () => {
   it("returns a count of how many times 'xx' appears in a string", () => {
     expect(countXX("Maxxxine")).to.equal(2);
     expect(countXX("xx")).to.equal(1);
     expect(countXX("xxxx")).to.equal(3);
     expect(countXX("")).to.equal(0);
     expect(countXX("abc")).to.equal(0);
+    expect(countXX("XxXxXxXxX")).to.equal(8);
   });
 });
