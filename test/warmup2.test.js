@@ -20,3 +20,13 @@ describe("frontTimes function", () => {
     expect(frontTimes("Abc", 0)).to.equal("");
   });
 });
+
+describe("contXX function", () => {
+  it("returns a count of how many times 'xx' appears in a string", () => {
+    expect(countXX("Maxxxine")).to.equal(2);
+    expect(countXX("xx")).to.equal(1);
+    expect(countXX("xxxx")).to.equal(3);
+    expect(countXX("")).to.equal(0);
+    expect(countXX("abc")).to.equal(0);
+  });
+});
