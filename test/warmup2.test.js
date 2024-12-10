@@ -122,5 +122,7 @@ describe("#arrayFront9()", () => {
     expect(arrayFront9([1, 2, 3])).to.equal(false);
     expect(arrayFront9([])).to.equal(false);
     expect(arrayFront9([1, 9])).to.equal(true);
+    expect(arrayFront9([1, 2, 9, 3, 4])).to.equal(true);
+    expect(arrayFront9([3, 9, 2, 3, 3])).to.equal(true);
   });
 });
