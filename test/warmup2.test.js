@@ -5,6 +5,7 @@ import frontTimes from "../src/warmup2/frontTimes.js";
 import countXX from "../src/warmup2/countXX.js";
 import doubleX from "../src/warmup2/doubleX.js";
 import stringBits from "../src/warmup2/stringBits.js";
+import last2 from "../src/warmup2/last2.js";
 
 describe("stringTimes function", () => {
   it("returns a str of a given str n times in a new str", () => {
@@ -68,11 +69,11 @@ describe("stringBits function", () => {
 
 describe("last2()", () => {
   it("returns a count of how many times the last two chars of a string appear in the string, not counting itself.", () => {
-    expect("hixxhi").to.equal(1);
-    expect("ddooddoodd").to.equal(2);
-    expect("xxaxxaxxaxx").to.equal(3);
-    expect("hi").to.equal(0);
-    expect("h").to.equal(0);
-    expect("").to.equal(0);
+    expect(last2("hixxhi")).to.equal(1);
+    expect(last2("ddooddoodd")).to.equal(2);
+    expect(last2("xxaxxaxxaxx")).to.equal(3);
+    expect(last2("hi")).to.equal(0);
+    expect(last2("h")).to.equal(0);
+    expect(last2("")).to.equal(0);
   });
 });
