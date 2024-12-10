@@ -65,3 +65,14 @@ describe("stringBits function", () => {
     });
   });
 });
+
+describe("last2()", () => {
+  it("returns a count of how many times the last two chars of a string appear in the string, not counting itself.", () => {
+    expect("hixxhi").to.equal(1);
+    expect("ddooddoodd").to.equal(2);
+    expect("xxaxxaxxaxx").to.equal(3);
+    expect("hi").to.equal(0);
+    expect("h").to.equal(0);
+    expect("").to.equal(0);
+  });
+});
