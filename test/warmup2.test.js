@@ -94,3 +94,32 @@ describe("#arrayCount9()", () => {
     expect(arrayCount9([0, 1, 2, 3])).to.equal(0);
   });
 });
+
+//arrayFront9
+describe("#arrayFront9()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(arrayFront9).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(arrayFront9([1, 2, 3, 9])).to.be.a("boolean");
+    });
+  });
+
+  describe("returns the correct output", () => {
+    it("returns 'error' if the argument is not an array", () => {
+      expect(arrayFront9("")).to.equal("error");
+      expect(arrayFront9(false)).to.equal("error");
+      expect(arrayFront9(4)).to.equal("error");
+    });
+  });
+
+  it("returns true if 9 appears as one of the first 4 elements of a given array, else false.", () => {
+    expect(arrayFront9([9, 2, 3, 4])).to.equal(true);
+    expect(arrayFront9([1, 2, 3, 9])).to.equal(true);
+    expect(arrayFront9([1, 2, 9, 4])).to.equal(true);
+    expect(arrayFront9([1, 2, 3])).to.equal(false);
+    expect(arrayFront9([])).to.equal(false);
+    expect(arrayFront9([1, 9])).to.equal(true);
+  });
+});
