@@ -4,6 +4,7 @@ import stringTimes from "../src/warmup2/stringTimes.js";
 import frontTimes from "../src/warmup2/frontTimes.js";
 import countXX from "../src/warmup2/countXX.js";
 import doubleX from "../src/warmup2/doubleX.js";
+import stringBits from "../src/warmup2/stringBits.js";
 
 describe("stringTimes function", () => {
   it("returns a str of a given str n times in a new str", () => {
@@ -57,7 +58,7 @@ describe("stringBits function", () => {
       expect(stringBits("Well well well")).to.equal("Wl elwl");
     });
     describe("Pi to be P", () => {
-      expect(stringBits("Pi")).to.equal("p");
+      expect(stringBits("Pi")).to.equal("P");
     });
     describe("Empty str to be empty str", () => {
       expect(stringBits("")).to.equal("");
