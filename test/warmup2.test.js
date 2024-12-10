@@ -49,21 +49,11 @@ describe("doubleX function", () => {
 
 describe("stringBits function", () => {
   it("returns a new str from given str of every other char, starting with the first", () => {
-    describe("Robert to be Rbr", () => {
-      expect(stringBits("Robert")).to.equal("Rbr");
-    });
-    describe("Hello to be Hlo", () => {
-      expect(stringBits("Hello")).to.equal("Hlo");
-    });
-    describe("Well well well to be Wl elwl", () => {
-      expect(stringBits("Well well well")).to.equal("Wl elwl");
-    });
-    describe("Pi to be P", () => {
-      expect(stringBits("Pi")).to.equal("P");
-    });
-    describe("Empty str to be empty str", () => {
-      expect(stringBits("")).to.equal("");
-    });
+    expect(stringBits("Robert")).to.equal("Rbr");
+    expect(stringBits("Hello")).to.equal("Hlo");
+    expect(stringBits("Well well well")).to.equal("Wl elwl");
+    expect(stringBits("Pi")).to.equal("P");
+    expect(stringBits("")).to.equal("");
   });
 });
 
@@ -75,5 +65,31 @@ describe("last2()", () => {
     expect(last2("hi")).to.equal(0);
     expect(last2("h")).to.equal(0);
     expect(last2("")).to.equal(0);
+  });
+});
+
+//arrayCount9
+describe("#arrayCount9()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(arrayCount9).to.be.a("function");
+    });
+    it("returns an int", () => {
+      expect(arrayCount9([1, 2, 9])).to.be.a("int");
+    });
+  });
+
+  describe("returns the correct output", () => {
+    it("returns 'error' if the argument is not an array", () => {
+      expect(arrayCount9("")).to.equal("error");
+      expect(arrayCount9(9)).to.equal("error");
+    });
+  });
+  it("returns an int of how many times 9 appears in a given array.", () => {
+    expect(arrayCount9([1, 4, 9])).to.equal(1);
+    expect(arrayCount9([9, 4, 9])).to.equal(2);
+    expect(arrayCount9([1, 4, 6])).to.equal(0);
+    expect(arrayCount9([9, 9, 9, 9, 9])).to.equal(5);
+    expect(arrayCount9([0, 1, 2, 3])).to.equal(0);
   });
 });
