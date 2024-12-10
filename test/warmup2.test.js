@@ -126,3 +126,31 @@ describe("#arrayFront9()", () => {
     expect(arrayFront9([3, 9, 2, 3, 3])).to.equal(true);
   });
 });
+
+//array123
+describe("#array123()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(array123).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(array123([1, 2, 3, 9])).to.be.a("boolean");
+    });
+  });
+
+  describe("returns the correct output", () => {
+    it("returns 'error' if the argument is not an array", () => {
+      expect(arrayFront9("")).to.equal("error");
+      expect(arrayFront9(false)).to.equal("error");
+      expect(arrayFront9(4)).to.equal("error");
+    });
+  });
+
+  it("returns true if the sequence 1, 2, 3 appears in the given array, else false.", () => {
+    expect(array123([1, 2, 3])).to.equal(true);
+    expect(array123([0, 1, 2, 3])).to.equal(true);
+    expect(array123([1, 2, 4])).to.equal(false);
+    expect(array123([3, 2, 1])).to.equal(false);
+    expect(array123([1, 2, 1, 2, 1, 2, 3])).to.equal(true);
+  });
+});
