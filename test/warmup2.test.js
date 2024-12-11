@@ -155,3 +155,31 @@ describe("#array123()", () => {
     expect(array123([1, 2, 1, 2, 1, 2, 3])).to.equal(true);
   });
 });
+
+//stringMatch
+describe("#stringMatch()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(stringMatch).to.be.a("function");
+    });
+    it("returns a number", () => {
+      expect(stringMatch("abc", "abc")).to.be.a("number");
+    });
+  });
+
+  describe("returns the correct output", () => {
+    it("returns 'error' if the arguments are not strings", () => {
+      expect(stringMatch("", 1)).to.equal("error");
+      expect(stringMatch(1, "1")).to.equal("error");
+      expect(stringMatch([], "")).to.equal("error");
+      expect(stringMatch({}, "")).to.equal("error");
+    });
+  });
+  it("compares two strings, if they contain the same length 2 substring, add to count, returns count", () => {
+    expect(stringMatch("abc", "abc")).to.equal(2);
+    expect(stringMatch("abc", "axc")).to.equal(0);
+    expect(stringMatch("Robert", "Hobert")).to.equal(4);
+    expect(stringMatch("aaxxaaxx", "iaxxai")).to.equal(3);
+    expect(stringMatch("he", "hello")).to.equal(1);
+  });
+});
