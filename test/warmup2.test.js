@@ -13,6 +13,7 @@ import stringMatch from "../src/warmup2/stringMatch.js";
 import stringX from "../src/warmup2/stringX.js";
 import altPairs from "../src/warmup2/altPairs.js";
 import stringYak from "../src/warmup2/stringYak.js";
+import array667 from "../src/warmup2/array667.js";
 
 describe("stringTimes function", () => {
   it("returns a str of a given str n times in a new str", () => {
@@ -288,9 +289,9 @@ describe("#array667()", () => {
     });
     describe("returns the correct output", () => {
       it("returns 'error' if the argument is not an array", () => {
-        expect(stringX(1)).to.equal("error");
-        expect(stringX("")).to.equal("error");
-        expect(stringX({})).to.equal("error");
+        expect(array667(1)).to.equal("error");
+        expect(array667("")).to.equal("error");
+        expect(array667({})).to.equal("error");
       });
     });
     describe("returns the correct number", () => {
