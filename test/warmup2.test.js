@@ -246,3 +246,32 @@ describe("#altPairs()", () => {
     });
   });
 });
+
+//stringYak
+describe("#stringYak()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(stringYak).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(stringYak("yakyyak")).to.be.a("string");
+    });
+    describe("returns the correct output", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(stringX(1)).to.equal("error");
+        expect(stringX([])).to.equal("error");
+        expect(stringX({})).to.equal("error");
+      });
+    });
+    describe("returns the correct string", () => {
+      it("returns a string where all the 'yak' are removed, but the 'a' can by any char.", () => {
+        expect(stringYak("yakyyak")).to.equal("y");
+        expect(stringYak("yak")).to.equal("");
+        expect(stringYak("yik")).to.equal("");
+        expect(stringYak("yakxxyak")).to.equal("xx");
+        expect(stringYak("zzbb")).to.equal("zzbb");
+        expect(stringYak("yykHi")).to.equal("Hi");
+      });
+    });
+  });
+});
