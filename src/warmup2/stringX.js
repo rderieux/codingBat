@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {string} str
+ * @returns a string with all the x's removed, unless the x is the first
+ * or last char of the string
+ */
 export default function stringX(str) {
   // Declare an empty string
   // if string is one char and equals x return xx

@@ -11,6 +11,7 @@ import arrayFront9 from "../src/warmup2/arrayFront9.js";
 import array123 from "../src/warmup2/array123.js";
 import stringMatch from "../src/warmup2/stringMatch.js";
 import stringX from "../src/warmup2/stringX.js";
+import altPairs from "../src/warmup2/altPairs.js";
 
 describe("stringTimes function", () => {
   it("returns a str of a given str n times in a new str", () => {

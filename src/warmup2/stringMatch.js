@@ -1,3 +1,10 @@
+/**
+ *
+ * @param {string} a
+ * @param {string} b
+ * @returns a count of the number of times the substring length 2
+ * of a and b match.
+ */
 export default function stringMatch(a, b) {
   // Declare a count varialbe
   // find out which string is shorter
