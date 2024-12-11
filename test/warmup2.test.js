@@ -14,6 +14,7 @@ import stringX from "../src/warmup2/stringX.js";
 import altPairs from "../src/warmup2/altPairs.js";
 import stringYak from "../src/warmup2/stringYak.js";
 import array667 from "../src/warmup2/array667.js";
+import noTriples from "../src/warmup2/noTriples.js";
 
 describe("stringTimes function", () => {
   it("returns a str of a given str n times in a new str", () => {
