@@ -214,3 +214,34 @@ describe("#stringX()", () => {
     });
   });
 });
+
+//altPairs
+describe("#altPairs()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(altPairs).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(stringX("xxHiXX")).to.be.a("string");
+    });
+    describe("returns the correct output", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(stringX(1)).to.equal("error");
+        expect(stringX([])).to.equal("error");
+        expect(stringX({})).to.equal("error");
+      });
+    });
+    describe("returns the correct string", () => {
+      it("returns a string made of all the chars at indexes 0,1, 4,5 8,9...", () => {
+        expect(altPairs("kitten")).to.equal("kien");
+        expect(altPairs("Chocolate")).to.equal("Chole");
+        expect(altPairs("CodingHorror")).to.equal("Congrr");
+        expect(altPairs("yak")).to.equal("ya");
+        expect(altPairs("ya")).to.equal("ya");
+        expect(altPairs("y")).to.equal("y");
+        expect(altPairs("")).to.equal("");
+        expect(altPairs("ThisThatTheOther")).to.equal("ThThThth");
+      });
+    });
+  });
+});
