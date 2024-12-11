@@ -184,3 +184,30 @@ describe("#stringMatch()", () => {
     expect(stringMatch("he", "hello")).to.equal(1);
   });
 });
+
+//stringX
+describe("#stringX()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(stringX).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(stringX("xxHiXX")).to.be.a("string");
+    });
+    describe("returns the correct output", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(stringX(1)).to.equal("error");
+        expect(stringX([])).to.equal("error");
+        expect(stringX({})).to.equal("error");
+      });
+    });
+    it("returns a string with all the x's removed, except the first and last char of the string.", () => {
+      expect(stringX("xxHiXX")).to.equal("xHix");
+      expect(stringX("Ruxxxnt")).to.equal("Runt");
+      expect(stringX("xabxxxcdx")).to.equal("xabcdx");
+      expect(stringX("")).to.equal("");
+      expect(stringX("xx")).to.equal("xx");
+      expect(stringX("x")).to.equal("xx");
+    });
+  });
+});
