@@ -9,6 +9,7 @@ import last2 from "../src/warmup2/last2.js";
 import arrayCount9 from "../src/warmup2/arrayCount9.js";
 import arrayFront9 from "../src/warmup2/arrayFront9.js";
 import array123 from "../src/warmup2/array123.js";
+import stringMatch from "../src/warmup2/stringMatch.js";
 
 describe("stringTimes function", () => {
   it("returns a str of a given str n times in a new str", () => {
