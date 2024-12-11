@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {string} str
+ * @returns returns a string where all of the 'yak' have been removed,
+ * but the 'a' can be any char.
+ */
 export default function stringYak(str) {
   // Create a result string
   // Loop through provided string

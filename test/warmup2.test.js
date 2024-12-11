@@ -276,3 +276,32 @@ describe("#stringYak()", () => {
     });
   });
 });
+
+//array667
+describe("#array667()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(array667).to.be.a("function");
+    });
+    it("returns a number", () => {
+      expect(array667([1, 2, 3])).to.be.a("number");
+    });
+    describe("returns the correct output", () => {
+      it("returns 'error' if the argument is not an array", () => {
+        expect(stringX(1)).to.equal("error");
+        expect(stringX("")).to.equal("error");
+        expect(stringX({})).to.equal("error");
+      });
+    });
+    describe("returns the correct number", () => {
+      it("returns the number of times 6, 6 and 6,7 appear in an array.", () => {
+        expect(array667([1, 2, 3, 6, 6])).to.equal(1);
+        expect(array667([])).to.equal(0);
+        expect(array667([6, 7, 3, 6, 6, 6])).to.equal(3);
+        expect(array667([6, 6])).to.equal(1);
+        expect(array667([6, 7])).to.equal(1);
+        expect(array667([1, 2, 3, 4, 6])).to.equal(0);
+      });
+    });
+  });
+});
