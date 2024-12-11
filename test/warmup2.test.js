@@ -306,3 +306,33 @@ describe("#array667()", () => {
     });
   });
 });
+
+//noTriples
+describe("#noTriples()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(noTriples).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(noTriples([1, 1, 2, 2, 3, 3])).to.be.a("boolean");
+    });
+
+    describe("returns the correct output", () => {
+      it("returns 'error' if the argument is not an array", () => {
+        expect(noTriples("")).to.equal("error");
+        expect(noTriples(1)).to.equal("error");
+        expect(noTriples({})).to.equal("error");
+      });
+    });
+
+    describe("returns the correct boolean", () => {
+      it("returns false if an number appears 3 times in a row, else true.", () => {
+        expect(noTriples([1, 1, 2, 2, 3, 3])).to.equal(true);
+        expect(noTriples([1, 1, 2, 2, 2, 1])).to.equal(false);
+        expect(noTriples([1, 1, 1])).to.equal(false);
+        expect(noTriples([1])).to.equal(true);
+        expect(noTriples([])).to.equal(true);
+      });
+    });
+  });
+});
