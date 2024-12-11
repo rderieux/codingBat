@@ -10,6 +10,7 @@ import arrayCount9 from "../src/warmup2/arrayCount9.js";
 import arrayFront9 from "../src/warmup2/arrayFront9.js";
 import array123 from "../src/warmup2/array123.js";
 import stringMatch from "../src/warmup2/stringMatch.js";
+import stringX from "../src/warmup2/stringX.js";
 
 describe("stringTimes function", () => {
   it("returns a str of a given str n times in a new str", () => {
@@ -201,13 +202,15 @@ describe("#stringX()", () => {
         expect(stringX({})).to.equal("error");
       });
     });
-    it("returns a string with all the x's removed, except the first and last char of the string.", () => {
-      expect(stringX("xxHiXX")).to.equal("xHix");
-      expect(stringX("Ruxxxnt")).to.equal("Runt");
-      expect(stringX("xabxxxcdx")).to.equal("xabcdx");
-      expect(stringX("")).to.equal("");
-      expect(stringX("xx")).to.equal("xx");
-      expect(stringX("x")).to.equal("xx");
+    describe("returns the correct string", () => {
+      it("returns a string with all the x's removed, except the first and last char of the string.", () => {
+        expect(stringX("xxHixx")).to.equal("xHix");
+        expect(stringX("Ruxxxnt")).to.equal("Runt");
+        expect(stringX("xabxxxcdx")).to.equal("xabcdx");
+        expect(stringX("")).to.equal("");
+        expect(stringX("xx")).to.equal("xx");
+        expect(stringX("x")).to.equal("xx");
+      });
     });
   });
 });
