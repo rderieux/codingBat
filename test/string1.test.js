@@ -131,3 +131,35 @@ describe("#makeOutWord()", () => {
     });
   });
 });
+
+//extraEnd
+describe("#extraEnd()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(extraEnd).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(extraEnd("ab")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(extraEnd([])).to.equal("error");
+        expect(extraEnd({})).to.equal("error");
+        expect(extraEnd(1)).to.equal("error");
+        expect(extraEnd(undefined)).to.equal("error");
+        expect(extraEnd(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns a string made of 3 copies of a given string.  Sting will be at least 2 char", () => {
+        expect(extraEnd("Rob")).to.equal("obobob");
+        expect(extraEnd("Bore")).to.equal("rerere");
+        expect(extraEnd("ab")).to.equal("ababab");
+        expect(extraEnd("nah")).to.equal("ahahah");
+        expect(extraEnd("Hi")).to.equal("HiHiHi");
+        expect(extraEnd("")).to.equal("");
+      });
+    });
+  });
+});
