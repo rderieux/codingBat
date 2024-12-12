@@ -337,3 +337,32 @@ describe("#noTriples()", () => {
     });
   });
 });
+
+//has271
+describe("#has271()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(has271).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(has271([2, 7, 1])).to.be.a("boolean");
+    });
+    describe("returns the correct output", () => {
+      it("returns 'error' if the argument is not an array", () => {
+        expect(has271("")).to.equal("error");
+        expect(has271(1)).to.equal("error");
+        expect(has271({})).to.equal("error");
+      });
+    });
+
+    describe("returns the correct boolean", () => {
+      it("returns true if the array contains a patter of number, number + 5, number - 1.", () => {
+        expect(has271([1, 2, 7, 1])).to.equal(true);
+        expect(has271([2, 3, 8, 2])).to.equal(true);
+        expect(has271([1, 2, 8, 1])).to.equal(false);
+        expect(has271([])).to.equal(true);
+        expect(has271([])).to.equal(true);
+      });
+    });
+  });
+});
