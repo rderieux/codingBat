@@ -15,6 +15,7 @@ import altPairs from "../src/warmup2/altPairs.js";
 import stringYak from "../src/warmup2/stringYak.js";
 import array667 from "../src/warmup2/array667.js";
 import noTriples from "../src/warmup2/noTriples.js";
+import has271 from "../src/warmup2/has271.js";
 
 describe("stringTimes function", () => {
   it("returns a str of a given str n times in a new str", () => {
@@ -356,12 +357,12 @@ describe("#has271()", () => {
     });
 
     describe("returns the correct boolean", () => {
-      it("returns true if the array contains a patter of number, number + 5, number - 1.", () => {
+      it("returns true if the array contains a patter of number, number + 5, number - 1.  Additionally the 271 counts even if the 1 differs by 2 or less from the correct value.", () => {
         expect(has271([1, 2, 7, 1])).to.equal(true);
         expect(has271([2, 3, 8, 2])).to.equal(true);
         expect(has271([1, 2, 8, 1])).to.equal(false);
-        expect(has271([])).to.equal(true);
-        expect(has271([])).to.equal(true);
+        expect(has271([3, 8, 2])).to.equal(true);
+        expect(has271([2, 7, 3])).to.equal(true);
       });
     });
   });
