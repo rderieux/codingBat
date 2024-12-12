@@ -4,6 +4,7 @@ import helloName from "../src/string1/helloName.js";
 import makeAbba from "../src/string1/makeAbba.js";
 import makeTags from "../src/string1/makeTags.js";
 import makeOutWord from "../src/string1/makeOutWord.js";
+import extraEnd from "../src/string1/extraEnd.js";
 
 //helloName
 describe("#helloName()", () => {
