@@ -1,6 +1,7 @@
 import { expect } from "chai";
 
 import helloName from "../src/string1/helloName.js";
+import makeAbba from "../src/string1/makeAbba.js";
 
 //helloName
 describe("#helloName()", () => {
