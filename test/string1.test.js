@@ -2,6 +2,7 @@ import { expect } from "chai";
 
 import helloName from "../src/string1/helloName.js";
 import makeAbba from "../src/string1/makeAbba.js";
+import makeTags from "../src/string1/makeTags.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -94,6 +95,37 @@ describe("#makeTags()", () => {
         expect(makeTags("body", "Heart")).to.equal("<body>Heart</body>");
         expect(makeTags("a", "b")).to.equal("<a>b</a>");
         expect(makeTags("i", "i")).to.equal("<i>i</i>");
+      });
+    });
+  });
+});
+
+//makeOutWord
+describe("#makeOutWord()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(makeOutWord).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(makeOutWord("<<>>", "by")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(makeOutWord([])).to.equal("error");
+        expect(makeOutWord({})).to.equal("error");
+        expect(makeOutWord(1)).to.equal("error");
+        expect(makeOutWord(undefined)).to.equal("error");
+        expect(makeOutWord(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns a string with the word string in the middle of the out string, which will always be 4 length", () => {
+        expect(makeOutWord("<<>>", "Hello")).to.equal("<<Hello>>");
+        expect(makeOutWord("<<>>", "Yay")).to.equal("<<Yay>>");
+        expect(makeOutWord("[[]]", "Meow")).to.equal("[[Meow]]");
+        expect(makeOutWord("Hell", "Hello")).to.equal("HeHelloll");
+        expect(makeOutWord("aaaa", "bb")).to.equal("aabbaa");
       });
     });
   });
