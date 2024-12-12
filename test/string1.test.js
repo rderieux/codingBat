@@ -6,6 +6,7 @@ import makeTags from "../src/string1/makeTags.js";
 import makeOutWord from "../src/string1/makeOutWord.js";
 import extraEnd from "../src/string1/extraEnd.js";
 import firstTwo from "../src/string1/firstTwo.js";
+import firstHalf from "../src/string1/firstHalf.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -223,10 +224,43 @@ describe("#firstHalf()", () => {
         expect(firstHalf("Robert")).to.equal("Rob");
         expect(firstHalf("Bore")).to.equal("Bo");
         expect(firstHalf("ab")).to.equal("a");
-        expect(firstHalf("Nananananana")).to.equal("Nananananana");
+        expect(firstHalf("Nanananananan")).to.equal("Nanananananan");
         expect(firstHalf("0123456")).to.equal("0123456");
         expect(firstHalf("a")).to.equal("a");
         expect(firstHalf("")).to.equal("");
+      });
+    });
+  });
+});
+
+//withoutEnd
+describe("#withoutEnd()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(withoutEnd).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(withoutEnd("abcd")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(withoutEnd([])).to.equal("error");
+        expect(withoutEnd({})).to.equal("error");
+        expect(withoutEnd(1)).to.equal("error");
+        expect(withoutEnd(undefined)).to.equal("error");
+        expect(withoutEnd(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns a version of the provided str, without the first an last char", () => {
+        expect(withoutEnd("Robert")).to.equal("ober");
+        expect(withoutEnd("Bore")).to.equal("or");
+        expect(withoutEnd("ab")).to.equal("");
+        expect(withoutEnd("Nanananananan")).to.equal("ananananana");
+        expect(withoutEnd("0123456")).to.equal("12345");
+        expect(withoutEnd("a")).to.equal("");
+        expect(withoutEnd("")).to.equal("");
       });
     });
   });
