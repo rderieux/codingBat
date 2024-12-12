@@ -66,3 +66,35 @@ describe("#makeAbba()", () => {
     });
   });
 });
+
+//makeTags
+describe("#makeTags()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(makeTags).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(makeTags("i", "by")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(makeTags([])).to.equal("error");
+        expect(makeTags({})).to.equal("error");
+        expect(makeTags(1)).to.equal("error");
+        expect(makeTags(undefined)).to.equal("error");
+        expect(makeTags(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns an html tag surrounding the word string", () => {
+        expect(makeTags("i", "Hello")).to.equal("<i>Hello</i>");
+        expect(makeTags("cite", "Yay")).to.equal("<cite>Yay</cite>");
+        expect(makeTags("i", "")).to.equal("<i></i>");
+        expect(makeTags("body", "Heart")).to.equal("<body>Heart</body>");
+        expect(makeTags("a", "b")).to.equal("<a>b</a>");
+        expect(makeTags("i", "i")).to.equal("<i>i</i>");
+      });
+    });
+  });
+});
