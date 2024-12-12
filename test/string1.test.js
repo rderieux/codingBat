@@ -198,3 +198,36 @@ describe("#firstTwo()", () => {
     });
   });
 });
+
+//firstHalf
+describe("#firstHalf()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(firstHalf).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(firstHalf("abcd")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(firstHalf([])).to.equal("error");
+        expect(firstHalf({})).to.equal("error");
+        expect(firstHalf(1)).to.equal("error");
+        expect(firstHalf(undefined)).to.equal("error");
+        expect(firstHalf(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns the first half of provided string if it's even length, else return the whole string", () => {
+        expect(firstHalf("Robert")).to.equal("Rob");
+        expect(firstHalf("Bore")).to.equal("Bo");
+        expect(firstHalf("ab")).to.equal("a");
+        expect(firstHalf("Nananananana")).to.equal("Nananananana");
+        expect(firstHalf("0123456")).to.equal("0123456");
+        expect(firstHalf("a")).to.equal("a");
+        expect(firstHalf("")).to.equal("");
+      });
+    });
+  });
+});
