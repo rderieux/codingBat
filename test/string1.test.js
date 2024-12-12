@@ -164,3 +164,36 @@ describe("#extraEnd()", () => {
     });
   });
 });
+
+//firstTwo
+describe("#firstTwo()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(firstTwo).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(firstTwo("ab")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(firstTwo([])).to.equal("error");
+        expect(firstTwo({})).to.equal("error");
+        expect(firstTwo(1)).to.equal("error");
+        expect(firstTwo(undefined)).to.equal("error");
+        expect(firstTwo(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns a string made of 3 copies of a given string.  Sting will be at least 2 char", () => {
+        expect(firstTwo("Rob")).to.equal("Ro");
+        expect(firstTwo("Bore")).to.equal("Bo");
+        expect(firstTwo("ab")).to.equal("ab");
+        expect(firstTwo("nah")).to.equal("na");
+        expect(firstTwo("Hi")).to.equal("Hi");
+        expect(firstTwo("a")).to.equal("a");
+        expect(firstTwo("")).to.equal("");
+      });
+    });
+  });
+});
