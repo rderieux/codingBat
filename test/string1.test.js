@@ -11,6 +11,7 @@ import withoutEnd from "../src/string1/withoutEnd.js";
 import comboString from "../src/string1/comboString.js";
 import nonStart from "../src/string1/nonStart.js";
 import left2 from "../src/string1/left2.js";
+import right2 from "../src/string1/right2.js";
 
 //helloName
 describe("#helloName()", () => {
