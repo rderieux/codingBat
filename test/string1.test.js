@@ -334,3 +334,34 @@ describe("#nonStart()", () => {
     });
   });
 });
+
+//left2
+describe("#left2()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(left2).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(left2("abcd", "abc")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(left2([])).to.equal("error");
+        expect(left2({})).to.equal("error");
+        expect(left2(1)).to.equal("error");
+        expect(left2(undefined)).to.equal("error");
+        expect(left2(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("given a string, move the first 2 char to the last two chars", () => {
+        expect(left2("Hello")).to.equal("lloHe");
+        expect(left2("Javascript")).to.equal("vascriptJa");
+        expect(left2("Hi")).to.equal("Hi");
+        expect(left2("rock")).to.equal("ckro");
+        expect(left2("Scout")).to.equal("outSc");
+      });
+    });
+  });
+});
