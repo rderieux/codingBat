@@ -21,6 +21,7 @@ import twoChar from "../src/string1/twoChar.js";
 import middleThree from "../src/string1/middleThree.js";
 import hasBad from "../src/string1/hasBad.js";
 import atFirst from "../src/string1/atFirst.js";
+import lastChars from "../src/string1/lastChars.js";
 
 //helloName
 describe("#helloName()", () => {
