@@ -670,3 +670,35 @@ describe("#hasBad()", () => {
     });
   });
 });
+
+//atFirst
+describe("#atFirst()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(atFirst).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(atFirst("abcd")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(atFirst([])).to.equal("error");
+        expect(atFirst({})).to.equal("error");
+        expect(atFirst(1)).to.equal("error");
+        expect(atFirst(undefined)).to.equal("error");
+        expect(atFirst(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns the first two chars of given string, str + @ if string is less than 2 chars.", () => {
+        expect(atFirst("bada$$")).to.equal("ba");
+        expect(atFirst("Oddly")).to.equal("Od");
+        expect(atFirst("xbadxx")).to.equal("xb");
+        expect(atFirst("xxbad")).to.equal("xx");
+        expect(atFirst("b")).to.equal("b@");
+        expect(atFirst("")).to.equal("@@");
+      });
+    });
+  });
+});
