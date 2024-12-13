@@ -15,6 +15,7 @@ import right2 from "../src/string1/right2.js";
 import theEnd from "../src/string1/theEnd.js";
 import withoutEnd2 from "../src/string1/withoutEnd2.js";
 import middleTwo from "../src/string1/middleTwo.js";
+import endsLy from "../src/string1/endsLy.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -493,6 +494,39 @@ describe("#middleTwo()", () => {
         expect(middleTwo("Hi")).to.equal("Hi");
         expect(middleTwo("rock")).to.equal("oc");
         expect(middleTwo("Scout")).to.equal("o");
+      });
+    });
+  });
+});
+
+//endsLy
+describe("#endsLy()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(endsLy).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(endsLy("abcd")).to.be.a("boolean");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(endsLy([])).to.equal("error");
+        expect(endsLy({})).to.equal("error");
+        expect(endsLy(1)).to.equal("error");
+        expect(endsLy(undefined)).to.equal("error");
+        expect(endsLy(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns true if string ends in 'ly', else false", () => {
+        expect(endsLy("Hellooly")).to.equal(true);
+        expect(endsLy("Oddly")).to.equal(true);
+        expect(endsLy("Hi")).to.equal(false);
+        expect(endsLy("rocky")).to.equal(false);
+        expect(endsLy("")).to.equal(false);
+        expect(endsLy("y")).to.equal(false);
+        expect(endsLy("ly")).to.equal(true);
       });
     });
   });
