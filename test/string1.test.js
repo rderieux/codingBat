@@ -8,6 +8,7 @@ import extraEnd from "../src/string1/extraEnd.js";
 import firstTwo from "../src/string1/firstTwo.js";
 import firstHalf from "../src/string1/firstHalf.js";
 import withoutEnd from "../src/string1/withoutEnd.js";
+import comboString from "../src/string1/comboString.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -262,6 +263,39 @@ describe("#withoutEnd()", () => {
         expect(withoutEnd("0123456")).to.equal("12345");
         expect(withoutEnd("a")).to.equal("");
         expect(withoutEnd("")).to.equal("");
+      });
+    });
+  });
+});
+
+//comboString
+describe("#comboString()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(comboString).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(comboString("abcd", "abc")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(comboString([])).to.equal("error");
+        expect(comboString({})).to.equal("error");
+        expect(comboString(1)).to.equal("error");
+        expect(comboString(undefined)).to.equal("error");
+        expect(comboString(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns a string, given 2 strings, concatenates short+long+short", () => {
+        expect(comboString("Robert", "obe")).to.equal("obeRobertobe");
+        expect(comboString("Bor", "ing")).to.equal("ingBoring");
+        expect(comboString("Hello", "hi")).to.equal("hiHellohi");
+        expect(comboString("aaa")).to.equal("baaab");
+        expect(comboString("a", "bb")).to.equal("abba");
+        expect(comboString("", "aa")).to.equal("aa");
+        expect(comboString("bb", "a")).to.equal("");
       });
     });
   });
