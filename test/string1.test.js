@@ -18,6 +18,7 @@ import middleTwo from "../src/string1/middleTwo.js";
 import endsLy from "../src/string1/endsLy.js";
 import nTwice from "../src/string1/nTwice.js";
 import twoChar from "../src/string1/twoChar.js";
+import middleThree from "../src/string1/middleThree.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -600,6 +601,38 @@ describe("#twoChar()", () => {
         expect(twoChar("", 0)).to.equal("");
         expect(twoChar("Chocolate", 3)).to.equal("co");
         expect(twoChar("Cho", 4)).to.equal("Ch");
+      });
+    });
+  });
+});
+
+//middleThree
+describe("#middleThree()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(middleThree).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(middleThree("abcd")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(middleThree([])).to.equal("error");
+        expect(middleThree({})).to.equal("error");
+        expect(middleThree(1)).to.equal("error");
+        expect(middleThree(undefined)).to.equal("error");
+        expect(middleThree(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns true if string ends in 'ly', else false", () => {
+        expect(middleThree("Hello")).to.equal("ell");
+        expect(middleThree("Oddly")).to.equal("ddl");
+        expect(middleThree("Candy")).to.equal("and");
+        expect(middleThree("Solving")).to.equal("lvi");
+        expect(middleThree("and")).to.equal("and");
+        expect(middleThree("Chocolate")).to.equal("col");
       });
     });
   });
