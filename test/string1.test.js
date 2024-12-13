@@ -398,3 +398,37 @@ describe("#right2()", () => {
     });
   });
 });
+
+//theEnd
+describe("#theEnd()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(theEnd).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(theEnd("abcd", "abc")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not string, boolean", () => {
+        expect(theEnd([], true)).to.equal("error");
+        expect(theEnd("", [])).to.equal("error");
+        expect(theEnd({}, false)).to.equal("error");
+        expect(theEnd("", {})).to.equal("error");
+        expect(theEnd(1, false)).to.equal("error");
+        expect(theEnd(true, "")).to.equal("error");
+        expect(theEnd(undefined, true)).to.equal("error");
+        expect(theEnd("", null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns the first char of a string, unless front is false, then return last char of string", () => {
+        expect(theEnd("Hello", true)).to.equal("H");
+        expect(theEnd("Javascript", false)).to.equal("t");
+        expect(theEnd("Hi", true)).to.equal("H");
+        expect(theEnd("rock", false)).to.equal("k");
+        expect(theEnd("Scout", true)).to.equal("S");
+      });
+    });
+  });
+});
