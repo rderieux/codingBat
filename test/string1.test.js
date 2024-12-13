@@ -9,6 +9,7 @@ import firstTwo from "../src/string1/firstTwo.js";
 import firstHalf from "../src/string1/firstHalf.js";
 import withoutEnd from "../src/string1/withoutEnd.js";
 import comboString from "../src/string1/comboString.js";
+import nonStart from "../src/string1/nonStart.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -296,6 +297,39 @@ describe("#comboString()", () => {
         expect(comboString("a", "bb")).to.equal("abba");
         expect(comboString("", "aa")).to.equal("aa");
         expect(comboString("bb", "a")).to.equal("abba");
+      });
+    });
+  });
+});
+
+//nonStart
+describe("#nonStart()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(nonStart).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(nonStart("abcd", "abc")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(nonStart([])).to.equal("error");
+        expect(nonStart({})).to.equal("error");
+        expect(nonStart(1)).to.equal("error");
+        expect(nonStart(undefined)).to.equal("error");
+        expect(nonStart(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("given two strings, return their concatenation, but omit the first char of each", () => {
+        expect(nonStart("Robert", "obe")).to.equal("obertbe");
+        expect(nonStart("Bore", "ing")).to.equal("oreng");
+        expect(nonStart("Hello", "hi")).to.equal("elloi");
+        expect(nonStart("aaa", "b")).to.equal("aa");
+        expect(nonStart("a", "bb")).to.equal("b");
+        expect(nonStart("", "aa")).to.equal("a");
+        expect(nonStart("bb", "a")).to.equal("b");
       });
     });
   });
