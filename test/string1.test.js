@@ -703,3 +703,35 @@ describe("#atFirst()", () => {
     });
   });
 });
+
+//lastChars
+describe("#lastChars()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(lastChars).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(lastChars("abcd", "abc")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not strings", () => {
+        expect(lastChars([], "")).to.equal("error");
+        expect(lastChars("", {})).to.equal("error");
+        expect(lastChars(1, "")).to.equal("error");
+        expect(lastChars("", undefined)).to.equal("error");
+        expect(lastChars(null, "")).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns a string of the first char of a, and last char of b.  Uses @ in its place", () => {
+        expect(lastChars("bad", "d")).to.equal("bd");
+        expect(lastChars("Oddly", "don't")).to.equal("Ot");
+        expect(lastChars("xbadxx", "yo")).to.equal("xo");
+        expect(lastChars("xxbad", "")).to.equal("x@");
+        expect(lastChars("", "b")).to.equal("@b");
+        expect(lastChars("", "")).to.equal("@@");
+      });
+    });
+  });
+});
