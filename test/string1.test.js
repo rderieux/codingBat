@@ -19,6 +19,7 @@ import endsLy from "../src/string1/endsLy.js";
 import nTwice from "../src/string1/nTwice.js";
 import twoChar from "../src/string1/twoChar.js";
 import middleThree from "../src/string1/middleThree.js";
+import hasBad from "../src/string1/hasBad.js";
 
 //helloName
 describe("#helloName()", () => {
