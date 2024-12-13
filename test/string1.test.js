@@ -14,6 +14,7 @@ import left2 from "../src/string1/left2.js";
 import right2 from "../src/string1/right2.js";
 import theEnd from "../src/string1/theEnd.js";
 import withoutEnd2 from "../src/string1/withoutEnd2.js";
+import middleTwo from "../src/string1/middleTwo.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -491,7 +492,7 @@ describe("#middleTwo()", () => {
         expect(middleTwo("Javascript")).to.equal("sc");
         expect(middleTwo("Hi")).to.equal("Hi");
         expect(middleTwo("rock")).to.equal("oc");
-        expect(middleTwo("Scout")).to.equal("Scout");
+        expect(middleTwo("Scout")).to.equal("o");
       });
     });
   });
