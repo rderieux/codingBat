@@ -736,3 +736,36 @@ describe("#lastChars()", () => {
     });
   });
 });
+
+//conCat
+describe("#conCat()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(conCat).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(conCat("abcd", "abc")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not strings", () => {
+        expect(conCat([], "")).to.equal("error");
+        expect(conCat("", {})).to.equal("error");
+        expect(conCat(1, "")).to.equal("error");
+        expect(conCat("", undefined)).to.equal("error");
+        expect(conCat(null, "")).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns string a concatenated to string b, unless that would create a double char, then omit one of them", () => {
+        expect(conCat("bad", "d")).to.equal("bad");
+        expect(conCat("Oddly", "don't")).to.equal("Oddlydon't");
+        expect(conCat("xbadxx", "yo")).to.equal("xxbadxxyo");
+        expect(conCat("xxbad", "")).to.equal("xxbad");
+        expect(conCat("", "b")).to.equal("b");
+        expect(conCat("", "")).to.equal("");
+        expect(conCat("abc", "cat")).to.equal("abcat");
+      });
+    });
+  });
+});
