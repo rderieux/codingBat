@@ -559,7 +559,7 @@ describe("#nTwice()", () => {
     describe("returns the correct string", () => {
       it("given a string and number n, returns a string with the first and last n chars of a string.  String will at least be length of n", () => {
         expect(nTwice("Hello", 2)).to.equal("Helo");
-        expect(nTwice("Oddly", 3)).to.equal("Oddly");
+        expect(nTwice("Oddly", 3)).to.equal("Odddly");
         expect(nTwice("Hi", 1)).to.equal("Hi");
         expect(nTwice("rocky", 1)).to.equal("ry");
         expect(nTwice("", 0)).to.equal("");
