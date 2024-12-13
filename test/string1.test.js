@@ -433,3 +433,34 @@ describe("#theEnd()", () => {
     });
   });
 });
+
+//withoutEnd2
+describe("#withoutEnd2()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(withoutEnd2).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(withoutEnd2("abcd", "abc")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(withoutEnd2([])).to.equal("error");
+        expect(withoutEnd2({})).to.equal("error");
+        expect(withoutEnd2(1)).to.equal("error");
+        expect(withoutEnd2(undefined)).to.equal("error");
+        expect(withoutEnd2(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns a version of the given str without both the first and last char of the str", () => {
+        expect(withoutEnd2("Hello")).to.equal("ell");
+        expect(withoutEnd2("Javascript")).to.equal("avascrip");
+        expect(withoutEnd2("Hi")).to.equal("");
+        expect(withoutEnd2("rock")).to.equal("oc");
+        expect(withoutEnd2("Scout")).to.equal("cou");
+      });
+    });
+  });
+});
