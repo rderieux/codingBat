@@ -637,3 +637,35 @@ describe("#middleThree()", () => {
     });
   });
 });
+
+//hasBad
+describe("#hasBad()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(hasBad).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(hasBad("abcd")).to.be.a("boolean");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(hasBad([])).to.equal("error");
+        expect(hasBad({})).to.equal("error");
+        expect(hasBad(1)).to.equal("error");
+        expect(hasBad(undefined)).to.equal("error");
+        expect(hasBad(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("return true if 'bad' appears at index 0 or 1, else returns false", () => {
+        expect(hasBad("bada$$")).to.equal(true);
+        expect(hasBad("Oddly")).to.equal(false);
+        expect(hasBad("xbadxx")).to.equal(true);
+        expect(hasBad("xxbad")).to.equal(false);
+        expect(hasBad("ba")).to.equal(false);
+        expect(hasBad("")).to.equal(false);
+      });
+    });
+  });
+});
