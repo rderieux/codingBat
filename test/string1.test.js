@@ -290,12 +290,12 @@ describe("#comboString()", () => {
     describe("returns the correct string", () => {
       it("returns a string, given 2 strings, concatenates short+long+short", () => {
         expect(comboString("Robert", "obe")).to.equal("obeRobertobe");
-        expect(comboString("Bor", "ing")).to.equal("ingBoring");
+        expect(comboString("Bore", "ing")).to.equal("ingBoreing");
         expect(comboString("Hello", "hi")).to.equal("hiHellohi");
-        expect(comboString("aaa")).to.equal("baaab");
+        expect(comboString("aaa", "b")).to.equal("baaab");
         expect(comboString("a", "bb")).to.equal("abba");
         expect(comboString("", "aa")).to.equal("aa");
-        expect(comboString("bb", "a")).to.equal("");
+        expect(comboString("bb", "a")).to.equal("abba");
       });
     });
   });
