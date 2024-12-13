@@ -465,3 +465,34 @@ describe("#withoutEnd2()", () => {
     });
   });
 });
+
+//middleTwo
+describe("#middleTwo()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(middleTwo).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(middleTwo("abcd")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(middleTwo([])).to.equal("error");
+        expect(middleTwo({})).to.equal("error");
+        expect(middleTwo(1)).to.equal("error");
+        expect(middleTwo(undefined)).to.equal("error");
+        expect(middleTwo(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("given an even string of at least 2, returns the middle two chars of the string", () => {
+        expect(middleTwo("Helloo")).to.equal("ll");
+        expect(middleTwo("Javascript")).to.equal("sc");
+        expect(middleTwo("Hi")).to.equal("Hi");
+        expect(middleTwo("rock")).to.equal("oc");
+        expect(middleTwo("Scout")).to.equal("Scout");
+      });
+    });
+  });
+});
