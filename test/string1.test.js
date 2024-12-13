@@ -16,6 +16,8 @@ import theEnd from "../src/string1/theEnd.js";
 import withoutEnd2 from "../src/string1/withoutEnd2.js";
 import middleTwo from "../src/string1/middleTwo.js";
 import endsLy from "../src/string1/endsLy.js";
+import nTwice from "../src/string1/nTwice.js";
+import twoChar from "../src/string1/twoChar.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -527,6 +529,77 @@ describe("#endsLy()", () => {
         expect(endsLy("")).to.equal(false);
         expect(endsLy("y")).to.equal(false);
         expect(endsLy("ly")).to.equal(true);
+      });
+    });
+  });
+});
+
+//nTwice
+describe("#nTwice()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(nTwice).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(nTwice("abcd", 1)).to.be.a("string", "number");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not a string, and a number", () => {
+        expect(nTwice([], true)).to.equal("error");
+        expect(nTwice("", [])).to.equal("error");
+        expect(nTwice({}, false)).to.equal("error");
+        expect(nTwice("", {})).to.equal("error");
+        expect(nTwice(1, "")).to.equal("error");
+        expect(nTwice(true, 1)).to.equal("error");
+        expect(nTwice(undefined, true)).to.equal("error");
+        expect(nTwice("", null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("given a string and number n, returns a string with the first and last n chars of a string.  String will at least be length of n", () => {
+        expect(nTwice("Hello", 2)).to.equal("Helo");
+        expect(nTwice("Oddly", 3)).to.equal("Oddly");
+        expect(nTwice("Hi", 1)).to.equal("Hi");
+        expect(nTwice("rocky", 1)).to.equal("ry");
+        expect(nTwice("", 0)).to.equal("");
+        expect(nTwice("Chocolate", 3)).to.equal("Choate");
+      });
+    });
+  });
+});
+
+//twoChar
+describe("#twoChar()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(twoChar).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(twoChar("abcd", 1)).to.be.a("string", "number");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not a string, and a number", () => {
+        expect(twoChar([], true)).to.equal("error");
+        expect(twoChar("", [])).to.equal("error");
+        expect(twoChar({}, false)).to.equal("error");
+        expect(twoChar("", {})).to.equal("error");
+        expect(twoChar(1, "")).to.equal("error");
+        expect(twoChar(true, 1)).to.equal("error");
+        expect(twoChar(undefined, true)).to.equal("error");
+        expect(twoChar("", null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("given a string and an index, returns a string of length two at given index.  If the index is too big or too small to define a string length  2, use the first 2 chars.", () => {
+        expect(twoChar("Hello", 2)).to.equal("ll");
+        expect(twoChar("Oddly", 3)).to.equal("ly");
+        expect(twoChar("Hi", 0)).to.equal("Hi");
+        expect(twoChar("rocky", 1)).to.equal("oc");
+        expect(twoChar("", 0)).to.equal("");
+        expect(twoChar("Chocolate", 3)).to.equal("co");
+        expect(twoChar("Cho", 4)).to.equal("Ch");
       });
     });
   });
