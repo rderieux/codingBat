@@ -25,6 +25,7 @@ import lastChars from "../src/string1/lastChars.js";
 import lastTwo from "../src/string1/lastTwo.js";
 import conCat from "../src/string1/conCat.js";
 import seeColor from "../src/string1/seeColor.js";
+import frontAgain from "../src/string1/frontAgain.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -865,6 +866,8 @@ describe("#frontAgain()", () => {
         expect(frontAgain("xred")).to.equal(false);
         expect(frontAgain("b")).to.equal(false);
         expect(frontAgain("")).to.equal(false);
+        expect(frontAgain("jj")).to.equal(true);
+        expect(frontAgain("jjj")).to.equal(true);
       });
     });
   });
