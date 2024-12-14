@@ -22,6 +22,7 @@ import middleThree from "../src/string1/middleThree.js";
 import hasBad from "../src/string1/hasBad.js";
 import atFirst from "../src/string1/atFirst.js";
 import lastChars from "../src/string1/lastChars.js";
+import lastTwo from "../src/string1/lastTwo.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -797,6 +798,38 @@ describe("#lastTwo()", () => {
         expect(lastTwo("xxbad")).to.equal("xx");
         expect(lastTwo("b")).to.equal("b@");
         expect(lastTwo("")).to.equal("@@");
+      });
+    });
+  });
+});
+
+//seeColor
+describe("#seeColor()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(seeColor).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(seeColor("abcd")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(seeColor([])).to.equal("error");
+        expect(seeColor({})).to.equal("error");
+        expect(seeColor(1)).to.equal("error");
+        expect(seeColor(undefined)).to.equal("error");
+        expect(seeColor(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("given a string, if the string begins with red or blue, return that color, else an empty string", () => {
+        expect(seeColor("redblue")).to.equal("red");
+        expect(seeColor("bluered")).to.equal("blue");
+        expect(seeColor("xblue")).to.equal("");
+        expect(seeColor("xred")).to.equal("");
+        expect(seeColor("b")).to.equal("");
+        expect(seeColor("")).to.equal("");
       });
     });
   });
