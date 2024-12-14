@@ -23,6 +23,8 @@ import hasBad from "../src/string1/hasBad.js";
 import atFirst from "../src/string1/atFirst.js";
 import lastChars from "../src/string1/lastChars.js";
 import lastTwo from "../src/string1/lastTwo.js";
+import conCat from "../src/string1/conCat.js";
+import seeColor from "../src/string1/seeColor.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -761,7 +763,7 @@ describe("#conCat()", () => {
       it("returns string a concatenated to string b, unless that would create a double char, then omit one of them", () => {
         expect(conCat("bad", "d")).to.equal("bad");
         expect(conCat("Oddly", "don't")).to.equal("Oddlydon't");
-        expect(conCat("xbadxx", "yo")).to.equal("xxbadxxyo");
+        expect(conCat("xbadxx", "yo")).to.equal("xbadxxyo");
         expect(conCat("xxbad", "")).to.equal("xxbad");
         expect(conCat("", "b")).to.equal("b");
         expect(conCat("", "")).to.equal("");
@@ -792,12 +794,12 @@ describe("#lastTwo()", () => {
 
     describe("returns the correct string", () => {
       it("given a string of any length, returns a string with the last two chars switched", () => {
-        expect(lastTwo("bada$$")).to.equal("ba");
-        expect(lastTwo("Oddly")).to.equal("Od");
-        expect(lastTwo("xbadxx")).to.equal("xb");
-        expect(lastTwo("xxbad")).to.equal("xx");
-        expect(lastTwo("b")).to.equal("b@");
-        expect(lastTwo("")).to.equal("@@");
+        expect(lastTwo("Last two")).to.equal("Last tow");
+        expect(lastTwo("Oddly")).to.equal("Oddyl");
+        expect(lastTwo("xbadxy")).to.equal("xbadyx");
+        expect(lastTwo("xxbad")).to.equal("xxbda");
+        expect(lastTwo("b")).to.equal("b");
+        expect(lastTwo("")).to.equal("");
       });
     });
   });
