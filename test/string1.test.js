@@ -769,3 +769,35 @@ describe("#conCat()", () => {
     });
   });
 });
+
+//lastTwo
+describe("#lastTwo()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(lastTwo).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(lastTwo("abcd")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(lastTwo([])).to.equal("error");
+        expect(lastTwo({})).to.equal("error");
+        expect(lastTwo(1)).to.equal("error");
+        expect(lastTwo(undefined)).to.equal("error");
+        expect(lastTwo(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("given a string of any length, returns a string with the last two chars switched", () => {
+        expect(lastTwo("bada$$")).to.equal("ba");
+        expect(lastTwo("Oddly")).to.equal("Od");
+        expect(lastTwo("xbadxx")).to.equal("xb");
+        expect(lastTwo("xxbad")).to.equal("xx");
+        expect(lastTwo("b")).to.equal("b@");
+        expect(lastTwo("")).to.equal("@@");
+      });
+    });
+  });
+});
