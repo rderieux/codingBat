@@ -836,3 +836,36 @@ describe("#seeColor()", () => {
     });
   });
 });
+
+//frontAgain
+describe("#frontAgain()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(frontAgain).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(frontAgain("abcd")).to.be.a("boolean");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(frontAgain([])).to.equal("error");
+        expect(frontAgain({})).to.equal("error");
+        expect(frontAgain(1)).to.equal("error");
+        expect(frontAgain(undefined)).to.equal("error");
+        expect(frontAgain(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("given a string, returns true if the first 2 chars, and last 2 chars are equal, else false", () => {
+        expect(frontAgain("redblue")).to.equal(false);
+        expect(frontAgain("blueredbl")).to.equal(true);
+        expect(frontAgain("edited")).to.equal(true);
+        expect(frontAgain("jjjj")).to.equal(true);
+        expect(frontAgain("xred")).to.equal(false);
+        expect(frontAgain("b")).to.equal(false);
+        expect(frontAgain("")).to.equal(false);
+      });
+    });
+  });
+});
