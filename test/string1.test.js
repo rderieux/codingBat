@@ -872,3 +872,36 @@ describe("#frontAgain()", () => {
     });
   });
 });
+
+//minCat
+describe("#minCat()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(minCat).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(minCat("abcd", "abc")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not strings", () => {
+        expect(minCat([], "")).to.equal("error");
+        expect(minCat("", {})).to.equal("error");
+        expect(minCat(1, "")).to.equal("error");
+        expect(minCat("", undefined)).to.equal("error");
+        expect(minCat(null, "")).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns string a concatenated to string b, unless that would create a double char, then omit one of them", () => {
+        expect(minCat("bad", "d")).to.equal("dd");
+        expect(minCat("Oddly", "don't")).to.equal("Oddlydon't");
+        expect(minCat("xbadxx", "yo")).to.equal("xxyo");
+        expect(minCat("xxbad", "")).to.equal("xxbad");
+        expect(minCat("", "b")).to.equal("b");
+        expect(minCat("", "")).to.equal("");
+        expect(minCat("abc", "cat")).to.equal("abcat");
+      });
+    });
+  });
+});
