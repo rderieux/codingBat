@@ -26,6 +26,7 @@ import lastTwo from "../src/string1/lastTwo.js";
 import conCat from "../src/string1/conCat.js";
 import seeColor from "../src/string1/seeColor.js";
 import frontAgain from "../src/string1/frontAgain.js";
+import minCat from "../src/string1/minCat.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -897,10 +898,10 @@ describe("#minCat()", () => {
         expect(minCat("bad", "d")).to.equal("dd");
         expect(minCat("Oddly", "don't")).to.equal("Oddlydon't");
         expect(minCat("xbadxx", "yo")).to.equal("xxyo");
-        expect(minCat("xxbad", "")).to.equal("xxbad");
-        expect(minCat("", "b")).to.equal("b");
+        expect(minCat("xxbad", "")).to.equal("");
+        expect(minCat("", "b")).to.equal("");
         expect(minCat("", "")).to.equal("");
-        expect(minCat("abc", "cat")).to.equal("abcat");
+        expect(minCat("abc", "cat")).to.equal("abccat");
       });
     });
   });
