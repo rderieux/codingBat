@@ -1078,3 +1078,36 @@ describe("#withoutX()", () => {
     });
   });
 });
+
+//withoutX2
+describe("#withoutX2()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(withoutX2).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(withoutX2("abcd")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(withoutX2([])).to.equal("error");
+        expect(withoutX2({})).to.equal("error");
+        expect(withoutX2(1)).to.equal("error");
+        expect(withoutX2(undefined)).to.equal("error");
+        expect(withoutX2(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("given a string, if one or both of the first 2 chars is 'x', return the string without those 'x' chars, otherwise return string unchanged", () => {
+        expect(withoutX2("xabcx")).to.equal("abc");
+        expect(withoutX2("xacd")).to.equal("acd");
+        expect(withoutX2("abbcdx")).to.equal("abbcd");
+        expect(withoutX2("aa")).to.equal("aa");
+        expect(withoutX2("xx")).to.equal("");
+        expect(withoutX2("x")).to.equal("");
+        expect(withoutX2("")).to.equal("");
+      });
+    });
+  });
+});
