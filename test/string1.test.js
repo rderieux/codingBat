@@ -28,6 +28,7 @@ import seeColor from "../src/string1/seeColor.js";
 import frontAgain from "../src/string1/frontAgain.js";
 import minCat from "../src/string1/minCat.js";
 import extraFront from "../src/string1/extraFront.js";
+import without2 from "../src/string1/without2.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -961,10 +962,12 @@ describe("#without2()", () => {
 
     describe("returns the correct string", () => {
       it("returns a str, if the first 2 chars match the last two chars of arg str, return str without first 2 chars", () => {
-        expect(without2("HelloHe")).to.equal("elloHe");
+        expect(without2("HelloHe")).to.equal("lloHe");
         expect(without2("Hello")).to.equal("Hello");
         expect(without2("edited")).to.equal("ited");
         expect(without2("jjjj")).to.equal("jj");
+        expect(without2("bbb")).to.equal("b");
+        expect(without2("bb")).to.equal("");
         expect(without2("b")).to.equal("b");
         expect(without2("")).to.equal("");
       });
