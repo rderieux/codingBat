@@ -30,6 +30,7 @@ import minCat from "../src/string1/minCat.js";
 import extraFront from "../src/string1/extraFront.js";
 import without2 from "../src/string1/without2.js";
 import deFront from "../src/string1/deFront.js";
+import startWord from "../src/string1/startWord.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -1022,23 +1023,23 @@ describe("#startWord()", () => {
     });
     describe("receives the correct input", () => {
       it("returns 'error' if the arguments are not strings", () => {
-        expect(minCat([], "")).to.equal("error");
-        expect(minCat("", {})).to.equal("error");
-        expect(minCat(1, "")).to.equal("error");
-        expect(minCat("", undefined)).to.equal("error");
-        expect(minCat(null, "")).to.equal("error");
+        expect(startWord([], "")).to.equal("error");
+        expect(startWord("", {})).to.equal("error");
+        expect(startWord(1, "")).to.equal("error");
+        expect(startWord("", undefined)).to.equal("error");
+        expect(startWord(null, "")).to.equal("error");
       });
     });
 
     describe("returns the correct string", () => {
       it("given two strings 'str' and 'word', if 'word' matches the front of 'str', return the matching front of 'str'.  The first letter is considered a 'wild card'", () => {
-        expect(minCat("bad", "dad")).to.equal("bad");
-        expect(minCat("Oddly", "don't")).to.equal("");
-        expect(minCat("body", "yo")).to.equal("bo");
-        expect(minCat("hippo", "xippo")).to.equal("hippo");
-        expect(minCat("", "b")).to.equal("");
-        expect(minCat("", "")).to.equal("");
-        expect(minCat("h", "z")).to.equal("h");
+        expect(startWord("bad", "dad")).to.equal("bad");
+        expect(startWord("Oddly", "don't")).to.equal("");
+        expect(startWord("body", "yo")).to.equal("bo");
+        expect(startWord("hippo", "xippo")).to.equal("hippo");
+        expect(startWord("", "b")).to.equal("");
+        expect(startWord("", "")).to.equal("");
+        expect(startWord("h", "z")).to.equal("h");
       });
     });
   });
