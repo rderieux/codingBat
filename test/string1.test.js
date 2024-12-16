@@ -1010,3 +1010,36 @@ describe("#deFront()", () => {
     });
   });
 });
+
+//startWord
+describe("#startWord()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(startWord).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(startWord("abcd", "abc")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not strings", () => {
+        expect(minCat([], "")).to.equal("error");
+        expect(minCat("", {})).to.equal("error");
+        expect(minCat(1, "")).to.equal("error");
+        expect(minCat("", undefined)).to.equal("error");
+        expect(minCat(null, "")).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("given two strings 'str' and 'word', if 'word' matches the front of 'str', return the matching front of 'str'.  The first letter is considered a 'wild card'", () => {
+        expect(minCat("bad", "dad")).to.equal("bad");
+        expect(minCat("Oddly", "don't")).to.equal("");
+        expect(minCat("body", "yo")).to.equal("bo");
+        expect(minCat("hippo", "xippo")).to.equal("hippo");
+        expect(minCat("", "b")).to.equal("");
+        expect(minCat("", "")).to.equal("");
+        expect(minCat("h", "z")).to.equal("h");
+      });
+    });
+  });
+});
