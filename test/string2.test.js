@@ -68,3 +68,36 @@ describe("#countHi()", () => {
     });
   });
 });
+
+//catDog
+describe("#catDog()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(catDog).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(catDog("abcd")).to.be.a("boolean");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(catDog([])).to.equal("error");
+        expect(catDog({})).to.equal("error");
+        expect(catDog(1)).to.equal("error");
+        expect(catDog(undefined)).to.equal("error");
+        expect(catDog(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns true if the number of times 'cat' and 'dog' appear in a string the same number of times.  Otherwise false.", () => {
+        expect(catDog("cat dog")).to.equal(true);
+        expect(catDog("cat dog dog")).to.equal(false);
+        expect(catDog("catcatdog")).to.equal(false);
+        expect(catDog("xycatxydogxy")).to.equal(true);
+        expect(catDog("1cat1cadodog")).to.equal(true);
+        expect(catDog("")).to.equal(false);
+        expect(catDog("catxdogxdogxca")).to.equal(false);
+      });
+    });
+  });
+});
