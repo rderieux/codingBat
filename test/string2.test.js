@@ -102,3 +102,35 @@ describe("#catDog()", () => {
     });
   });
 });
+
+//countCode
+describe("#catDog()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(catDog).to.be.a("function");
+    });
+    it("returns a number", () => {
+      expect(catDog("abcd")).to.be.a("number");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(catDog([])).to.equal("error");
+        expect(catDog({})).to.equal("error");
+        expect(catDog(1)).to.equal("error");
+        expect(catDog(undefined)).to.equal("error");
+        expect(catDog(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns the number of times the string 'code' appears in the given string, except the 'd' can be any char.", () => {
+        expect(catDog("xxcodexx")).to.equal(1);
+        expect(catDog("catcopedogcooedog")).to.equal(2);
+        expect(catDog("catcolecatdog")).to.equal(1);
+        expect(catDog("cozexxcope")).to.equal(2);
+        expect(catDog("AAcodeBBcoleCCccoreDD")).to.equal(3);
+        expect(catDog("")).to.equal(0);
+      });
+    });
+  });
+});
