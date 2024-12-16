@@ -1,6 +1,7 @@
 import { expect } from "chai";
 
 import doubleChar from "../src/string2/doubleChar.js";
+import countHi from "../src/string2/countHi.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
