@@ -906,3 +906,35 @@ describe("#minCat()", () => {
     });
   });
 });
+
+//extraFront
+describe("#extraFront()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(extraFront).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(extraFront("abcd")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(extraFront([])).to.equal("error");
+        expect(extraFront({})).to.equal("error");
+        expect(extraFront(1)).to.equal("error");
+        expect(extraFront(undefined)).to.equal("error");
+        expect(extraFront(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns a string with the first 2 chars of arg string concatenated 3 times, whatever is there if less than 2", () => {
+        expect(extraFront("redblue")).to.equal("rerere");
+        expect(extraFront("Hello")).to.equal("HeHeHe");
+        expect(extraFront("edited")).to.equal("ededed");
+        expect(extraFront("jjjj")).to.equal("jjjjjj");
+        expect(extraFront("b")).to.equal("bbb");
+        expect(extraFront("")).to.equal("");
+      });
+    });
+  });
+});
