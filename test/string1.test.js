@@ -939,3 +939,35 @@ describe("#extraFront()", () => {
     });
   });
 });
+
+//without2
+describe("#without2()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(without2).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(without2("abcd")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(without2([])).to.equal("error");
+        expect(without2({})).to.equal("error");
+        expect(without2(1)).to.equal("error");
+        expect(without2(undefined)).to.equal("error");
+        expect(without2(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns a str, if the first 2 chars match the last two chars of arg str, return str without first 2 chars", () => {
+        expect(without2("HelloHe")).to.equal("elloHe");
+        expect(without2("Hello")).to.equal("Hello");
+        expect(without2("edited")).to.equal("ited");
+        expect(without2("jjjj")).to.equal("jj");
+        expect(without2("b")).to.equal("b");
+        expect(without2("")).to.equal("");
+      });
+    });
+  });
+});
