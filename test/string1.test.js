@@ -974,3 +974,37 @@ describe("#without2()", () => {
     });
   });
 });
+
+//deFront
+describe("#deFront()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(deFront).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(deFront("abcd")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(deFront([])).to.equal("error");
+        expect(deFront({})).to.equal("error");
+        expect(deFront(1)).to.equal("error");
+        expect(deFront(undefined)).to.equal("error");
+        expect(deFront(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns a string without the first 2 chars, unless the first char is 'a' or the second char is 'b'", () => {
+        expect(deFront("HelloHe")).to.equal("lloHe");
+        expect(deFront("Hello")).to.equal("Hello");
+        expect(deFront("edited")).to.equal("ited");
+        expect(deFront("jjjj")).to.equal("jj");
+        expect(deFront("bbb")).to.equal("b");
+        expect(deFront("bb")).to.equal("");
+        expect(deFront("b")).to.equal("b");
+        expect(deFront("")).to.equal("");
+      });
+    });
+  });
+});
