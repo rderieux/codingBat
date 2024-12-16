@@ -29,6 +29,7 @@ import frontAgain from "../src/string1/frontAgain.js";
 import minCat from "../src/string1/minCat.js";
 import extraFront from "../src/string1/extraFront.js";
 import without2 from "../src/string1/without2.js";
+import deFront from "../src/string1/deFront.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -996,14 +997,15 @@ describe("#deFront()", () => {
 
     describe("returns the correct string", () => {
       it("returns a string without the first 2 chars, unless the first char is 'a' or the second char is 'b'", () => {
-        expect(deFront("HelloHe")).to.equal("lloHe");
-        expect(deFront("Hello")).to.equal("Hello");
-        expect(deFront("edited")).to.equal("ited");
-        expect(deFront("jjjj")).to.equal("jj");
-        expect(deFront("bbb")).to.equal("b");
-        expect(deFront("bb")).to.equal("");
-        expect(deFront("b")).to.equal("b");
-        expect(deFront("")).to.equal("");
+        expect(deFront("abc")).to.equal("abc");
+        expect(deFront("acd")).to.equal("ad");
+        expect(deFront("abbcd")).to.equal("abbcd");
+        expect(deFront("aa")).to.equal("a");
+        expect(deFront("bb")).to.equal("b");
+        expect(deFront("bbb")).to.equal("bb");
+        expect(deFront("b")).to.equal("");
+        expect(deFront("a")).to.equal("a");
+        expect(deFront("Hello")).to.equal("llo");
       });
     });
   });
