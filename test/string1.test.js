@@ -32,6 +32,7 @@ import without2 from "../src/string1/without2.js";
 import deFront from "../src/string1/deFront.js";
 import startWord from "../src/string1/startWord.js";
 import withoutX from "../src/string1/withoutX.js";
+import withoutX2 from "../src/string1/withoutX2.js";
 
 //helloName
 describe("#helloName()", () => {
@@ -1100,11 +1101,13 @@ describe("#withoutX2()", () => {
 
     describe("returns the correct string", () => {
       it("given a string, if one or both of the first 2 chars is 'x', return the string without those 'x' chars, otherwise return string unchanged", () => {
-        expect(withoutX2("xabcx")).to.equal("abc");
+        expect(withoutX2("xxbcx")).to.equal("bcx");
         expect(withoutX2("xacd")).to.equal("acd");
-        expect(withoutX2("abbcdx")).to.equal("abbcd");
-        expect(withoutX2("aa")).to.equal("aa");
+        expect(withoutX2("axaa")).to.equal("aaa");
+        expect(withoutX2("xHix")).to.equal("Hix");
+        expect(withoutX2("Hxi")).to.equal("Hi");
         expect(withoutX2("xx")).to.equal("");
+        expect(withoutX2("xxxx")).to.equal("xx");
         expect(withoutX2("x")).to.equal("");
         expect(withoutX2("")).to.equal("");
       });
