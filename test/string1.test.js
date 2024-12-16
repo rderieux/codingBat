@@ -27,6 +27,7 @@ import conCat from "../src/string1/conCat.js";
 import seeColor from "../src/string1/seeColor.js";
 import frontAgain from "../src/string1/frontAgain.js";
 import minCat from "../src/string1/minCat.js";
+import extraFront from "../src/string1/extraFront.js";
 
 //helloName
 describe("#helloName()", () => {
