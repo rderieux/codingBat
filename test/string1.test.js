@@ -1044,3 +1044,36 @@ describe("#startWord()", () => {
     });
   });
 });
+
+//withoutX
+describe("#withoutX()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(withoutX).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(withoutX("abcd")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(withoutX([])).to.equal("error");
+        expect(withoutX({})).to.equal("error");
+        expect(withoutX(1)).to.equal("error");
+        expect(withoutX(undefined)).to.equal("error");
+        expect(withoutX(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("given a string, if the first or last chars are 'x' return the string without them, otherwise return the string unchanged", () => {
+        expect(withoutX("xabcx")).to.equal("abc");
+        expect(withoutX("xacd")).to.equal("acd");
+        expect(withoutX("abbcdx")).to.equal("abbcd");
+        expect(withoutX("aa")).to.equal("aa");
+        expect(withoutX("xx")).to.equal("");
+        expect(withoutX("x")).to.equal("");
+        expect(withoutX("")).to.equal("");
+      });
+    });
+  });
+});
