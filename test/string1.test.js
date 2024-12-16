@@ -31,6 +31,7 @@ import extraFront from "../src/string1/extraFront.js";
 import without2 from "../src/string1/without2.js";
 import deFront from "../src/string1/deFront.js";
 import startWord from "../src/string1/startWord.js";
+import withoutX from "../src/string1/withoutX.js";
 
 //helloName
 describe("#helloName()", () => {
