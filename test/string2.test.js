@@ -2,6 +2,7 @@ import { expect } from "chai";
 
 import doubleChar from "../src/string2/doubleChar.js";
 import countHi from "../src/string2/countHi.js";
+import catDog from "../src/string2/catDog.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
@@ -95,7 +96,7 @@ describe("#catDog()", () => {
         expect(catDog("catcatdog")).to.equal(false);
         expect(catDog("xycatxydogxy")).to.equal(true);
         expect(catDog("1cat1cadodog")).to.equal(true);
-        expect(catDog("")).to.equal(false);
+        expect(catDog("")).to.equal(true);
         expect(catDog("catxdogxdogxca")).to.equal(false);
       });
     });
