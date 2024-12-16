@@ -34,3 +34,36 @@ describe("#doubleChar()", () => {
     });
   });
 });
+
+//countHi
+describe("#countHi()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(countHi).to.be.a("function");
+    });
+    it("returns a number", () => {
+      expect(countHi("abcd")).to.be.a("number");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(countHi([])).to.equal("error");
+        expect(countHi({})).to.equal("error");
+        expect(countHi(1)).to.equal("error");
+        expect(countHi(undefined)).to.equal("error");
+        expect(countHi(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns the number of times 'hi' appears in the string", () => {
+        expect(countHi("Hi")).to.equal(1);
+        expect(countHi("abc hi hi")).to.equal(2);
+        expect(countHi("Hill")).to.equal(1);
+        expect(countHi("xy")).to.equal(0);
+        expect(countHi("i")).to.equal(0);
+        expect(countHi("")).to.equal(0);
+        expect(countHi("xhixhixhix")).to.equal(3);
+      });
+    });
+  });
+});
