@@ -3,6 +3,7 @@ import { expect } from "chai";
 import doubleChar from "../src/string2/doubleChar.js";
 import countHi from "../src/string2/countHi.js";
 import catDog from "../src/string2/catDog.js";
+import countCode from "../src/string2/countCode.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
@@ -104,32 +105,32 @@ describe("#catDog()", () => {
 });
 
 //countCode
-describe("#catDog()", () => {
+describe("#countCode()", () => {
   describe("works with correct types", () => {
     it("is a function", () => {
-      expect(catDog).to.be.a("function");
+      expect(countCode).to.be.a("function");
     });
     it("returns a number", () => {
-      expect(catDog("abcd")).to.be.a("number");
+      expect(countCode("abcd")).to.be.a("number");
     });
     describe("receives the correct input", () => {
       it("returns 'error' if the argument is not a string", () => {
-        expect(catDog([])).to.equal("error");
-        expect(catDog({})).to.equal("error");
-        expect(catDog(1)).to.equal("error");
-        expect(catDog(undefined)).to.equal("error");
-        expect(catDog(null)).to.equal("error");
+        expect(countCode([])).to.equal("error");
+        expect(countCode({})).to.equal("error");
+        expect(countCode(1)).to.equal("error");
+        expect(countCode(undefined)).to.equal("error");
+        expect(countCode(null)).to.equal("error");
       });
     });
 
     describe("returns the correct string", () => {
       it("returns the number of times the string 'code' appears in the given string, except the 'd' can be any char.", () => {
-        expect(catDog("xxcodexx")).to.equal(1);
-        expect(catDog("catcopedogcooedog")).to.equal(2);
-        expect(catDog("catcolecatdog")).to.equal(1);
-        expect(catDog("cozexxcope")).to.equal(2);
-        expect(catDog("AAcodeBBcoleCCccoreDD")).to.equal(3);
-        expect(catDog("")).to.equal(0);
+        expect(countCode("xxcodexx")).to.equal(1);
+        expect(countCode("catcopedogcooedog")).to.equal(2);
+        expect(countCode("catcolecatdog")).to.equal(1);
+        expect(countCode("cozexxcope")).to.equal(2);
+        expect(countCode("AAcodeBBcoleCCccoreDD")).to.equal(3);
+        expect(countCode("")).to.equal(0);
       });
     });
   });
