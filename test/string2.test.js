@@ -6,6 +6,7 @@ import catDog from "../src/string2/catDog.js";
 import countCode from "../src/string2/countCode.js";
 import endOther from "../src/string2/endOther.js";
 import xyzThere from "../src/string2/xyzThere.js";
+import bobThere from "../src/string2/bobThere.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
@@ -201,6 +202,41 @@ describe("#xyzThere()", () => {
         expect(xyzThere("abc.xyzxyz")).to.equal(true);
         expect(xyzThere("abc.xxyz")).to.equal(true);
         expect(xyzThere("abc.xyxyz")).to.equal(true);
+      });
+    });
+  });
+});
+
+//bobThere
+describe("#bobThere()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(bobThere).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(bobThere("abcd")).to.be.a("boolean");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(bobThere([])).to.equal("error");
+        expect(bobThere({})).to.equal("error");
+        expect(bobThere(1)).to.equal("error");
+        expect(bobThere(undefined)).to.equal("error");
+        expect(bobThere(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns true if the given string contains 'bob'.  The 'o' can be any char.", () => {
+        expect(bobThere("abcbob")).to.equal(true);
+        expect(bobThere("abc.bbb")).to.equal(true);
+        expect(bobThere("bab.abc")).to.equal(true);
+        expect(bobThere("xy")).to.equal(false);
+        expect(bobThere("yz")).to.equal(false);
+        expect(bobThere("")).to.equal(false);
+        expect(bobThere("abc.bobbob")).to.equal(true);
+        expect(bobThere("abc.xbob")).to.equal(true);
+        expect(bobThere("abc.xybob")).to.equal(true);
       });
     });
   });
