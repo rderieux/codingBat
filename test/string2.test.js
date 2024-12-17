@@ -169,3 +169,36 @@ describe("#endOther()", () => {
     });
   });
 });
+
+//xyzThere
+describe("#xyzThere()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(xyzThere).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(xyzThere("abcd")).to.be.a("boolean");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(xyzThere([])).to.equal("error");
+        expect(xyzThere({})).to.equal("error");
+        expect(xyzThere(1)).to.equal("error");
+        expect(xyzThere(undefined)).to.equal("error");
+        expect(xyzThere(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns true if the given string contains 'xyz', unless it's preceded by a period.", () => {
+        expect(xyzThere("abcxyz")).to.equal(true);
+        expect(xyzThere("abc.xyz")).to.equal(false);
+        expect(xyzThere("xyz.abc")).to.equal(true);
+        expect(xyzThere("xy")).to.equal(false);
+        expect(xyzThere("yz")).to.equal(false);
+        expect(xyzThere("")).to.equal(false);
+        expect(xyzThere("abc.xyzxyz")).to.equal(true);
+      });
+    });
+  });
+});
