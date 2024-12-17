@@ -5,6 +5,7 @@ import countHi from "../src/string2/countHi.js";
 import catDog from "../src/string2/catDog.js";
 import countCode from "../src/string2/countCode.js";
 import endOther from "../src/string2/endOther.js";
+import xyzThere from "../src/string2/xyzThere.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
@@ -198,6 +199,8 @@ describe("#xyzThere()", () => {
         expect(xyzThere("yz")).to.equal(false);
         expect(xyzThere("")).to.equal(false);
         expect(xyzThere("abc.xyzxyz")).to.equal(true);
+        expect(xyzThere("abc.xxyz")).to.equal(true);
+        expect(xyzThere("abc.xyxyz")).to.equal(true);
       });
     });
   });
