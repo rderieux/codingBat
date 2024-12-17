@@ -63,7 +63,7 @@ describe("#countHi()", () => {
       });
     });
 
-    describe("returns the correct string", () => {
+    describe("returns the correct number", () => {
       it("returns the number of times 'hi' appears in the string", () => {
         expect(countHi("Hi")).to.equal(1);
         expect(countHi("abc hi hi")).to.equal(2);
@@ -96,7 +96,7 @@ describe("#catDog()", () => {
       });
     });
 
-    describe("returns the correct string", () => {
+    describe("returns the correct boolean", () => {
       it("returns true if the number of times 'cat' and 'dog' appear in a string the same number of times.  Otherwise false.", () => {
         expect(catDog("cat dog")).to.equal(true);
         expect(catDog("cat dog dog")).to.equal(false);
@@ -129,7 +129,7 @@ describe("#countCode()", () => {
       });
     });
 
-    describe("returns the correct string", () => {
+    describe("returns the correct number", () => {
       it("returns the number of times the string 'code' appears in the given string, except the 'd' can be any char.", () => {
         expect(countCode("xxcodexx")).to.equal(1);
         expect(countCode("catcopedogcooedog")).to.equal(2);
@@ -194,7 +194,7 @@ describe("#xyzThere()", () => {
       });
     });
 
-    describe("returns the correct string", () => {
+    describe("returns the correct boolean", () => {
       it("returns true if the given string contains 'xyz', unless it's preceded by a period.", () => {
         expect(xyzThere("abcxyz")).to.equal(true);
         expect(xyzThere("abc.xyz")).to.equal(false);
@@ -229,7 +229,7 @@ describe("#bobThere()", () => {
       });
     });
 
-    describe("returns the correct string", () => {
+    describe("returns the correct boolean", () => {
       it("returns true if the given string contains 'bob'.  The 'o' can be any char.", () => {
         expect(bobThere("abcbob")).to.equal(true);
         expect(bobThere("abc.bbb")).to.equal(true);
@@ -264,7 +264,7 @@ describe("#xybalance()", () => {
       });
     });
 
-    describe("returns the correct string", () => {
+    describe("returns the correct boolean", () => {
       it("returns true if a 'y' follows the last 'x' in given string.", () => {
         expect(xyBalance("xxxxxxy")).to.equal(true);
         expect(xyBalance("xxyxb")).to.equal(false);
@@ -299,7 +299,7 @@ describe("#mixString()", () => {
       });
     });
 
-    describe("returns the correct boolean", () => {
+    describe("returns the correct string", () => {
       it("Given two strings, a and b, create a bigger string made of the first char of a, the first char of b, the second char of a, the second char of b, and so on. Any leftover chars go at the end of the result.", () => {
         expect(mixString("Hiabc", "abc")).to.equal("Haibacbc");
         expect(mixString("Hi", "There")).to.equal("HTihere");
@@ -332,7 +332,7 @@ describe("#repeatEnd()", () => {
       });
     });
 
-    describe("returns the correct boolean", () => {
+    describe("returns the correct string", () => {
       it("given a string and an number 'n', returns the string repeated n number of times", () => {
         expect(repeatEnd("Hiabc", 3)).to.equal("abcabcabc");
         expect(repeatEnd("Hi", 2)).to.equal("HiHi");
