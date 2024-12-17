@@ -449,3 +449,38 @@ describe("#prefixAgain()", () => {
     });
   });
 });
+
+//xyzMiddle
+describe("#xyzMiddle()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(xyzMiddle).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(xyzMiddle("abcd")).to.be.a("boolean");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(xyzMiddle([])).to.equal("error");
+        expect(xyzMiddle({})).to.equal("error");
+        expect(xyzMiddle(1)).to.equal("error");
+        expect(xyzMiddle(undefined)).to.equal("error");
+        expect(xyzMiddle(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct boolean", () => {
+      it("returns true if 'xyz' appears in the middle of a string.  Middle is if the number of chars to the left and right of 'xyz' differ by one at most.", () => {
+        expect(xyzMiddle("axyzaa")).to.equal(true);
+        expect(xyzMiddle("aaxyza")).to.equal(true);
+        expect(xyzMiddle("axyzaaa")).to.equal(false);
+        expect(xyzMiddle("aaaxyza")).to.equal(false);
+        expect(xyzMiddle("xyz")).to.equal(true);
+        expect(xyzMiddle("1x345xyz12x4")).to.equal(true);
+        expect(xyzMiddle("xy")).to.equal(false);
+        expect(xyzMiddle("xyzz")).to.equal(true);
+        expect(xyzMiddle("xxyz")).to.equal(true);
+      });
+    });
+  });
+});
