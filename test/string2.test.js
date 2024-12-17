@@ -8,6 +8,7 @@ import endOther from "../src/string2/endOther.js";
 import xyzThere from "../src/string2/xyzThere.js";
 import bobThere from "../src/string2/bobThere.js";
 import xyBalance from "../src/string2/xyBalance.js";
+import mixString from "../src/string2/mixString.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
@@ -273,6 +274,39 @@ describe("#xybalance()", () => {
         expect(xyBalance("abc.bobbob")).to.equal(true);
         expect(xyBalance("abc.xbob")).to.equal(false);
         expect(xyBalance("abc.xybob")).to.equal(true);
+      });
+    });
+  });
+});
+
+//mixString
+describe("#mixString()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(mixString).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(mixString("abcd", "abc")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not strings", () => {
+        expect(mixString([], "")).to.equal("error");
+        expect(mixString("", {})).to.equal("error");
+        expect(mixString(1, "")).to.equal("error");
+        expect(mixString("", undefined)).to.equal("error");
+        expect(mixString(null, "")).to.equal("error");
+      });
+    });
+
+    describe("returns the correct boolean", () => {
+      it("Given two strings, a and b, create a bigger string made of the first char of a, the first char of b, the second char of a, the second char of b, and so on. Any leftover chars go at the end of the result.", () => {
+        expect(mixString("Hiabc", "abc")).to.equal("Haibacbc");
+        expect(mixString("Hi", "There")).to.equal("HTihere");
+        expect(mixString("xxxx", "There")).to.equal("xTxhxexre");
+        expect(mixString("xxx", "X")).to.equal("xXxx");
+        expect(mixString("", "Hello")).to.equal("Hello");
+        expect(mixString("Abc", "")).to.equal("Abc");
+        expect(mixString("So", "Long")).to.equal("SLoong");
       });
     });
   });
