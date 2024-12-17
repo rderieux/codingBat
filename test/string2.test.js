@@ -12,6 +12,7 @@ import mixString from "../src/string2/mixString.js";
 import repeatEnd from "../src/string2/repeatEnd.js";
 import repeatFront from "../src/string2/repeatFront.js";
 import repeatSeparator from "../src/string2/repeatSeparator.js";
+import prefixAgain from "../src/string2/prefixAgain.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
@@ -436,12 +437,12 @@ describe("#prefixAgain()", () => {
     });
 
     describe("returns the correct boolean", () => {
-      it("Given a string, consider the prefix string made of the first N chars of the string. Does that prefix string appear somewhere else in the string? Assume that the string is not empty and that N is in the range 1..str.length", () => {
+      it("given a string and a number 'n', returns true if front of str 'n' number of chars appears later in the string, else false", () => {
         expect(prefixAgain("Chocolate", 4)).to.equal(false);
         expect(prefixAgain("Hi12345Hi6789Hi10", 1)).to.equal(true);
         expect(prefixAgain("xyzxyxyxy", 3)).to.equal(false);
         expect(prefixAgain("a", 1)).to.equal(false);
-        expect(prefixAgain("aa", 1)).to.equal(false);
+        expect(prefixAgain("aa", 1)).to.equal(true);
         expect(prefixAgain("ab", 1)).to.equal(false);
         expect(prefixAgain("abXYabc", 2)).to.equal(true);
       });
