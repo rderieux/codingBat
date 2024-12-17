@@ -379,3 +379,38 @@ describe("#repeatFront()", () => {
     });
   });
 });
+
+//repeatSeparator
+describe("#repeatSeparator()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(repeatSeparator).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(repeatSeparator("abcd", "e", 1)).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not a string, string, and number", () => {
+        expect(repeatSeparator([], "", "")).to.equal("error");
+        expect(repeatSeparator("", {}, [])).to.equal("error");
+        expect(repeatSeparator(1, "", undefined)).to.equal("error");
+        expect(repeatSeparator("", undefined, null)).to.equal("error");
+        expect(repeatSeparator(null, "", {})).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("Given two strings, word and a separator sep, return a big string made of count occurrences of the word, separated by the separator string.", () => {
+        expect(repeatSeparator("Chocolate", "X", 3)).to.equal(
+          "ChocolateXChocolateXChocolate"
+        );
+        expect(repeatSeparator("This", "That", 2)).to.equal("ThisThatThis");
+        expect(repeatSeparator("xx", "X", 2)).to.equal("xxXxx");
+        expect(repeatSeparator("xyz", "", 1)).to.equal("xyz");
+        expect(repeatSeparator("1234", "5", 0)).to.equal("");
+        expect(repeatSeparator("A", "B", 5)).to.equal("ABABABABA");
+        expect(repeatSeparator("Java", "*", 4)).to.equal("Java*Java*Java*Java");
+      });
+    });
+  });
+});
