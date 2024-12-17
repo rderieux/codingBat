@@ -9,6 +9,7 @@ import xyzThere from "../src/string2/xyzThere.js";
 import bobThere from "../src/string2/bobThere.js";
 import xyBalance from "../src/string2/xyBalance.js";
 import mixString from "../src/string2/mixString.js";
+import repeatEnd from "../src/string2/repeatEnd.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
@@ -333,12 +334,13 @@ describe("#repeatEnd()", () => {
 
     describe("returns the correct boolean", () => {
       it("given a string and an number 'n', returns the string repeated n number of times", () => {
-        expect(repeatEnd("Hiabc", 3)).to.equal("HiabcHiabcHiabc");
+        expect(repeatEnd("Hiabc", 3)).to.equal("abcabcabc");
         expect(repeatEnd("Hi", 2)).to.equal("HiHi");
-        expect(repeatEnd("xxxx", 1)).to.equal("xxxx");
+        expect(repeatEnd("xxxx", 1)).to.equal("x");
         expect(repeatEnd("xxx", 0)).to.equal("");
         expect(repeatEnd("1234", 4)).to.equal("1234123412341234");
         expect(repeatEnd("", 0)).to.equal("");
+        expect(repeatEnd("Hello", 3)).to.equal("llollollo");
       });
     });
   });
