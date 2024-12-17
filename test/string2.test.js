@@ -415,3 +415,36 @@ describe("#repeatSeparator()", () => {
     });
   });
 });
+
+//prefixAgain
+describe("#prefixAgain()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(prefixAgain).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(prefixAgain("abcd", 1)).to.be.a("boolean");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not a string, and number", () => {
+        expect(prefixAgain([], "")).to.equal("error");
+        expect(prefixAgain("", {})).to.equal("error");
+        expect(prefixAgain(1, "")).to.equal("error");
+        expect(prefixAgain("", undefined)).to.equal("error");
+        expect(prefixAgain(null, "")).to.equal("error");
+      });
+    });
+
+    describe("returns the correct boolean", () => {
+      it("Given a string, consider the prefix string made of the first N chars of the string. Does that prefix string appear somewhere else in the string? Assume that the string is not empty and that N is in the range 1..str.length", () => {
+        expect(prefixAgain("Chocolate", 4)).to.equal(false);
+        expect(prefixAgain("Hi12345Hi6789Hi10", 1)).to.equal(true);
+        expect(prefixAgain("xyzxyxyxy", 3)).to.equal(false);
+        expect(prefixAgain("a", 1)).to.equal(false);
+        expect(prefixAgain("aa", 1)).to.equal(false);
+        expect(prefixAgain("ab", 1)).to.equal(false);
+        expect(prefixAgain("abXYabc", 2)).to.equal(true);
+      });
+    });
+  });
+});
