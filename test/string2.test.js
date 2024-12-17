@@ -345,3 +345,36 @@ describe("#repeatEnd()", () => {
     });
   });
 });
+
+//repeatFront
+describe("#repeatFront()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(repeatFront).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(repeatFront("abcd", 1)).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not a string, and number", () => {
+        expect(repeatFront([], "")).to.equal("error");
+        expect(repeatFront("", {})).to.equal("error");
+        expect(repeatFront(1, "")).to.equal("error");
+        expect(repeatFront("", undefined)).to.equal("error");
+        expect(repeatFront(null, "")).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("Given a string and an int 'n', returns a string made of the first 'n' characters of the string, followed by the first 'n'-1 characters of the string, and so on. You may assume that n is between 0 and the length of the string, inclusive", () => {
+        expect(repeatFront("Chocolate", 4)).to.equal("ChocChoChC");
+        expect(repeatFront("Chocolate", 3)).to.equal("ChoChC");
+        expect(repeatFront("xxxx", 1)).to.equal("x");
+        expect(repeatFront("xyz", 3)).to.equal("xyzxyx");
+        expect(repeatFront("1234", 0)).to.equal("");
+        expect(repeatFront("", 0)).to.equal("");
+        expect(repeatFront("Java", 4)).to.equal("JavaJavJaJ");
+      });
+    });
+  });
+});
