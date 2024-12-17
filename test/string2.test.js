@@ -4,6 +4,7 @@ import doubleChar from "../src/string2/doubleChar.js";
 import countHi from "../src/string2/countHi.js";
 import catDog from "../src/string2/catDog.js";
 import countCode from "../src/string2/countCode.js";
+import endOther from "../src/string2/endOther.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
@@ -131,6 +132,39 @@ describe("#countCode()", () => {
         expect(countCode("cozexxcope")).to.equal(2);
         expect(countCode("AAcodeBBcoleCCccoreDD")).to.equal(3);
         expect(countCode("")).to.equal(0);
+      });
+    });
+  });
+});
+
+//endOther
+describe("#endOther()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(endOther).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(endOther("abcd", "abc")).to.be.a("boolean");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not strings", () => {
+        expect(endOther([], "")).to.equal("error");
+        expect(endOther("", {})).to.equal("error");
+        expect(endOther(1, "")).to.equal("error");
+        expect(endOther("", undefined)).to.equal("error");
+        expect(endOther(null, "")).to.equal("error");
+      });
+    });
+
+    describe("returns the correct boolean", () => {
+      it("given two strings, returns true if either of the strings appears at the end of the other string, else false.", () => {
+        expect(endOther("Hiabc", "abc")).to.equal(true);
+        expect(endOther("AbC", "HiaBc")).to.equal(true);
+        expect(endOther("body", "dy")).to.equal(true);
+        expect(endOther("abc", "abc")).to.equal(true);
+        expect(endOther("abcXYZ", "abcDEF")).to.equal(false);
+        expect(endOther("ab", "ab12")).to.equal(false);
+        expect(endOther("ab", "12ab")).to.equal(true);
       });
     });
   });
