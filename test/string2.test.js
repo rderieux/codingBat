@@ -10,6 +10,7 @@ import bobThere from "../src/string2/bobThere.js";
 import xyBalance from "../src/string2/xyBalance.js";
 import mixString from "../src/string2/mixString.js";
 import repeatEnd from "../src/string2/repeatEnd.js";
+import repeatFront from "../src/string2/repeatFront.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
