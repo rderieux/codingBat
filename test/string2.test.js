@@ -241,3 +241,38 @@ describe("#bobThere()", () => {
     });
   });
 });
+
+//xybalance
+describe("#xybalance()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(xybalance).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(xybalance("abcd")).to.be.a("boolean");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(xybalance([])).to.equal("error");
+        expect(xybalance({})).to.equal("error");
+        expect(xybalance(1)).to.equal("error");
+        expect(xybalance(undefined)).to.equal("error");
+        expect(xybalance(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns true if a 'y' follows the last 'x' in given string.", () => {
+        expect(xybalance("xxxxxxy")).to.equal(true);
+        expect(xybalance("xxyxb")).to.equal(false);
+        expect(xybalance("bab.abc")).to.equal(true);
+        expect(xybalance("xy")).to.equal(true);
+        expect(xybalance("yz")).to.equal(true);
+        expect(xybalance("")).to.equal(true);
+        expect(xybalance("abc.bobbob")).to.equal(false);
+        expect(xybalance("abc.xbob")).to.equal(false);
+        expect(xybalance("abc.xybob")).to.equal(true);
+      });
+    });
+  });
+});
