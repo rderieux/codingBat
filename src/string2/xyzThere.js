@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {string} str
+ * @returns true if xyz appears in the given string.  Unless it's preceded by a period.
+ * Otherwise returns false.
+ */
 export default function xyzThere(str) {
   // Guard against non string arg
   // declare a count variable
