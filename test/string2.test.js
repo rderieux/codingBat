@@ -11,6 +11,7 @@ import xyBalance from "../src/string2/xyBalance.js";
 import mixString from "../src/string2/mixString.js";
 import repeatEnd from "../src/string2/repeatEnd.js";
 import repeatFront from "../src/string2/repeatFront.js";
+import repeatSeparator from "../src/string2/repeatSeparator.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
