@@ -311,3 +311,35 @@ describe("#mixString()", () => {
     });
   });
 });
+
+//repeatEnd
+describe("#repeatEnd()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(repeatEnd).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(repeatEnd("abcd", 1)).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not a string, and number", () => {
+        expect(repeatEnd([], "")).to.equal("error");
+        expect(repeatEnd("", {})).to.equal("error");
+        expect(repeatEnd(1, "")).to.equal("error");
+        expect(repeatEnd("", undefined)).to.equal("error");
+        expect(repeatEnd(null, "")).to.equal("error");
+      });
+    });
+
+    describe("returns the correct boolean", () => {
+      it("given a string and an number 'n', returns the string repeated n number of times", () => {
+        expect(repeatEnd("Hiabc", 3)).to.equal("HiabcHiabcHiabc");
+        expect(repeatEnd("Hi", 2)).to.equal("HiHi");
+        expect(repeatEnd("xxxx", 1)).to.equal("xxxx");
+        expect(repeatEnd("xxx", 0)).to.equal("");
+        expect(repeatEnd("1234", 4)).to.equal("1234123412341234");
+        expect(repeatEnd("", 0)).to.equal("");
+      });
+    });
+  });
+});
