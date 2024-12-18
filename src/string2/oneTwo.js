@@ -16,7 +16,7 @@ export default function oneTwo(str) {
   }
 
   let resultString = "";
-  debugger;
+
   for (let i = 0; i < str.length; i += 3) {
     if (str[i + 2] !== undefined) {
       resultString += str[i + 1];
