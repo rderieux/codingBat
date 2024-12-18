@@ -18,6 +18,7 @@ import getSandwich from "../src/string2/getSandwich.js";
 import sameStarChar from "../src/string2/sameStarChar.js";
 import oneTwo from "../src/string2/oneTwo.js";
 import zipZap from "../src/string2/zipZap.js";
+import starOut from "../src/string2/starOut.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
@@ -670,6 +671,7 @@ describe("#starOut()", () => {
         expect(starOut("*a")).to.equal("");
         expect(starOut("a*")).to.equal("");
         expect(starOut("ab")).to.equal("ab");
+        expect(starOut("sm***eil*ly")).to.equal("siy");
       });
     });
   });
