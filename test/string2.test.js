@@ -523,3 +523,37 @@ describe("#getSandwich()", () => {
     });
   });
 });
+
+//sameStarChar
+describe("#sameStarChar()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(sameStarChar).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(sameStarChar("abcd")).to.be.a("boolean");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(sameStarChar([])).to.equal("error");
+        expect(sameStarChar({})).to.equal("error");
+        expect(sameStarChar(1)).to.equal("error");
+        expect(sameStarChar(undefined)).to.equal("error");
+        expect(sameStarChar(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct boolean", () => {
+      it("returns true for every star in the string where the chars before and after the star are the same for all stars, else false.", () => {
+        expect(sameStarChar("breadjambread")).to.equal("jam");
+        expect(sameStarChar("xxbreadjambreadyy")).to.equal("jam");
+        expect(sameStarChar("xxbreadyy")).to.equal("");
+        expect(sameStarChar("breadbread")).to.equal("");
+        expect(sameStarChar("xyz")).to.equal("");
+        expect(sameStarChar("")).to.equal("");
+        expect(sameStarChar("breadbreasbread")).to.equal("breas");
+        expect(sameStarChar("breadbreadbreadbread")).to.equal("breadbread");
+      });
+    });
+  });
+});
