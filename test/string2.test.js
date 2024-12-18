@@ -16,6 +16,7 @@ import prefixAgain from "../src/string2/prefixAgain.js";
 import xyzMiddle from "../src/string2/xyzMiddle.js";
 import getSandwich from "../src/string2/getSandwich.js";
 import sameStarChar from "../src/string2/sameStarChar.js";
+import oneTwo from "../src/string2/oneTwo.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
