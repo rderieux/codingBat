@@ -19,6 +19,7 @@ import sameStarChar from "../src/string2/sameStarChar.js";
 import oneTwo from "../src/string2/oneTwo.js";
 import zipZap from "../src/string2/zipZap.js";
 import starOut from "../src/string2/starOut.js";
+import plusOut from "../src/string2/plusOut.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
@@ -699,9 +700,9 @@ describe("#plusOut()", () => {
     describe("returns the correct string", () => {
       it("given a string and a non-empty word string, returns a version of the original string where all the chars have been replaced with pluses '+', except for appearances of the word string which are preserved unchanged.", () => {
         expect(plusOut("Hiabc", "abc")).to.equal("++abc");
-        expect(plusOut("Hi", "There")).to.equal("+++++++");
+        expect(plusOut("Hi", "There")).to.equal("++");
         expect(plusOut("xxTherexx", "There")).to.equal("++There++");
-        expect(plusOut("xxx", "x")).to.equal("xxxx");
+        expect(plusOut("xxx", "x")).to.equal("xxx");
         expect(plusOut("12xy34xyabcxy", "xy")).to.equal("++xy++xy+++xy");
         expect(plusOut("abXYabcXYZ", "XY")).to.equal("++XY+++XY+");
         expect(plusOut("aaxxxxbb", "xx")).to.equal("++xxxx++");
