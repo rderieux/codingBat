@@ -13,6 +13,7 @@ import repeatEnd from "../src/string2/repeatEnd.js";
 import repeatFront from "../src/string2/repeatFront.js";
 import repeatSeparator from "../src/string2/repeatSeparator.js";
 import prefixAgain from "../src/string2/prefixAgain.js";
+import xyzMiddle from "../src/string2/xyzMiddle.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
@@ -479,7 +480,10 @@ describe("#xyzMiddle()", () => {
         expect(xyzMiddle("1x345xyz12x4")).to.equal(true);
         expect(xyzMiddle("xy")).to.equal(false);
         expect(xyzMiddle("xyzz")).to.equal(true);
-        expect(xyzMiddle("xxyz")).to.equal(true);
+        expect(xyzMiddle("xyzxyzAxyzBxyzxyz")).to.equal(true);
+        expect(xyzMiddle("xyzxyzxyzBxyzxyz")).to.equal(true);
+        expect(xyzMiddle("xyzxyzAxyzxyzxyz")).to.equal(true);
+        expect(xyzMiddle("xyzxyzAxyzxyzxy")).to.equal(false);
       });
     });
   });
