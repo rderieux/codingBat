@@ -488,3 +488,37 @@ describe("#xyzMiddle()", () => {
     });
   });
 });
+
+//getSandwich
+describe("#getSandwich()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(getSandwich).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(getSandwich("abcd")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(getSandwich([])).to.equal("error");
+        expect(getSandwich({})).to.equal("error");
+        expect(getSandwich(1)).to.equal("error");
+        expect(getSandwich(undefined)).to.equal("error");
+        expect(getSandwich(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns the string that is between the first and last appearance of 'bread' in the given string, or '' if there aren't two pieces of bread.", () => {
+        expect(getSandwich("breadjambread")).to.equal("jam");
+        expect(getSandwich("xxbreadjambreadyy")).to.equal("jam");
+        expect(getSandwich("xxbreadyy")).to.equal("");
+        expect(getSandwich("breadbread")).to.equal("");
+        expect(getSandwich("xyz")).to.equal("");
+        expect(getSandwich("")).to.equal("");
+        expect(getSandwich("breadbreasbread")).to.equal("breas");
+        expect(getSandwich("breadbreadbreadbread")).to.equal("breadbread");
+      });
+    });
+  });
+});
