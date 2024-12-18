@@ -15,6 +15,7 @@ import repeatSeparator from "../src/string2/repeatSeparator.js";
 import prefixAgain from "../src/string2/prefixAgain.js";
 import xyzMiddle from "../src/string2/xyzMiddle.js";
 import getSandwich from "../src/string2/getSandwich.js";
+import sameStarChar from "../src/string2/sameStarChar.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
@@ -544,15 +545,16 @@ describe("#sameStarChar()", () => {
     });
 
     describe("returns the correct boolean", () => {
-      it("returns true for every star in the string where the chars before and after the star are the same for all stars, else false.", () => {
-        expect(sameStarChar("breadjambread")).to.equal("jam");
-        expect(sameStarChar("xxbreadjambreadyy")).to.equal("jam");
-        expect(sameStarChar("xxbreadyy")).to.equal("");
-        expect(sameStarChar("breadbread")).to.equal("");
-        expect(sameStarChar("xyz")).to.equal("");
-        expect(sameStarChar("")).to.equal("");
-        expect(sameStarChar("breadbreasbread")).to.equal("breas");
-        expect(sameStarChar("breadbreadbreadbread")).to.equal("breadbread");
+      it("returns true for every star in the string where the chars before and after the star are the same for all stars IF there is a char before and after the star, else false.", () => {
+        expect(sameStarChar("y*y")).to.equal(true);
+        expect(sameStarChar("y*yz*z")).to.equal(true);
+        expect(sameStarChar("xy*z")).to.equal(false);
+        expect(sameStarChar("a*a*b")).to.equal(false);
+        expect(sameStarChar("")).to.equal(true);
+        expect(sameStarChar("abcDEF")).to.equal(true);
+        expect(sameStarChar("XY*YYYY*Y*")).to.equal(true);
+        expect(sameStarChar("XY*YYYY*Z*")).to.equal(false);
+        expect(sameStarChar("*12*2*2")).to.equal(true);
       });
     });
   });
