@@ -639,3 +639,38 @@ describe("#zipZap()", () => {
     });
   });
 });
+
+//starOut
+describe("#starOut()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(starOut).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(starOut("abcd")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the argument is not a string", () => {
+        expect(starOut([])).to.equal("error");
+        expect(starOut({})).to.equal("error");
+        expect(starOut(1)).to.equal("error");
+        expect(starOut(undefined)).to.equal("error");
+        expect(starOut(null)).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("return a string, where for every star in the provided string, the chars to its left and right are removed.", () => {
+        expect(starOut("smii*lley")).to.equal("smiley");
+        expect(starOut("caa*tt")).to.equal("cat");
+        expect(starOut("ab*cd")).to.equal("ad");
+        expect(starOut("ab**cd")).to.equal("ad");
+        expect(starOut("sm*eilly")).to.equal("silly");
+        expect(starOut("*str*in*gy")).to.equal("ty");
+        expect(starOut("*a")).to.equal("");
+        expect(starOut("a*")).to.equal("");
+        expect(starOut("ab")).to.equal("ab");
+      });
+    });
+  });
+});
