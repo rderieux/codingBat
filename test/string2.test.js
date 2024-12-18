@@ -17,6 +17,7 @@ import xyzMiddle from "../src/string2/xyzMiddle.js";
 import getSandwich from "../src/string2/getSandwich.js";
 import sameStarChar from "../src/string2/sameStarChar.js";
 import oneTwo from "../src/string2/oneTwo.js";
+import zipZap from "../src/string2/zipZap.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
@@ -603,35 +604,37 @@ describe("#oneTwo()", () => {
 });
 
 //zipZap
-describe("#oneTwo()", () => {
+describe("#zipZap()", () => {
   describe("works with correct types", () => {
     it("is a function", () => {
-      expect(oneTwo).to.be.a("function");
+      expect(zipZap).to.be.a("function");
     });
     it("returns a string", () => {
-      expect(oneTwo("abcd")).to.be.a("string");
+      expect(zipZap("abcd")).to.be.a("string");
     });
     describe("receives the correct input", () => {
       it("returns 'error' if the argument is not a string", () => {
-        expect(oneTwo([])).to.equal("error");
-        expect(oneTwo({})).to.equal("error");
-        expect(oneTwo(1)).to.equal("error");
-        expect(oneTwo(undefined)).to.equal("error");
-        expect(oneTwo(null)).to.equal("error");
+        expect(zipZap([])).to.equal("error");
+        expect(zipZap({})).to.equal("error");
+        expect(zipZap(1)).to.equal("error");
+        expect(zipZap(undefined)).to.equal("error");
+        expect(zipZap(null)).to.equal("error");
       });
     });
 
     describe("returns the correct string", () => {
-      it("Given a string, compute a new string by moving the first char to come after the next two chars, so 'abc' yields 'bca'. Repeat this process for each subsequent group of 3 chars, so 'abcdef' yields 'bcaefd'. Ignore any group of fewer than 3 chars at the end.", () => {
-        expect(oneTwo("abc")).to.equal("bca");
-        expect(oneTwo("tca")).to.equal("cat");
-        expect(oneTwo("tcagdo")).to.equal("catdog");
-        expect(oneTwo("")).to.equal("");
-        expect(oneTwo("")).to.equal("");
-        expect(oneTwo("")).to.equal("");
-        expect(oneTwo("")).to.equal("");
-        expect(oneTwo("xy")).to.equal("");
-        expect(oneTwo("abcdefxyz")).to.equal("bcaefdyzx");
+      it("looks for patters like 'zip' and 'zap' in the string, starting with 'z' and ending with 'p'.  Returns a string with the middle char removed in those patterns.", () => {
+        expect(zipZap("zipXzap")).to.equal("zpXzp");
+        expect(zipZap("zippidy doo da, zippidy day")).to.equal(
+          "zppidy doo da, zppidy day"
+        );
+        expect(zipZap("zopzop")).to.equal("zpzp");
+        expect(zipZap("")).to.equal("");
+        expect(zipZap("zzzopzop")).to.equal("zzzpzp");
+        expect(zipZap("zip")).to.equal("zp");
+        expect(zipZap("abcppp")).to.equal("abcppp");
+        expect(zipZap("azbcppp")).to.equal("azbcppp");
+        expect(zipZap("azbcpzpp")).to.equal("azbcpzp");
       });
     });
   });
