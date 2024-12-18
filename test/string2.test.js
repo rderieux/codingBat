@@ -14,6 +14,7 @@ import repeatFront from "../src/string2/repeatFront.js";
 import repeatSeparator from "../src/string2/repeatSeparator.js";
 import prefixAgain from "../src/string2/prefixAgain.js";
 import xyzMiddle from "../src/string2/xyzMiddle.js";
+import getSandwich from "../src/string2/getSandwich.js";
 
 //doubleChar
 describe("#doubleChar()", () => {

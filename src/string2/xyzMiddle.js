@@ -8,8 +8,9 @@
 export default function xyzMiddle(str) {
   // Guard against incorrect types
   // if str.length is less than 3 return false
-  // loop through 'str', if index is x, index + 1 is y,
-  // and index plus 2 is z, set frontEnd variable to index
+  // loop through 'str', starting from the middle -2 indexes,
+  // if index is x, index + 1 is y, and index plus 2 is z,
+  // set frontEnd variable to index
   // set endFront variable to index plus 3
   // set frontString variable to str[0] to frontEnd
   // set endString variable to str[endFront]
