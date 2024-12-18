@@ -676,3 +676,36 @@ describe("#starOut()", () => {
     });
   });
 });
+
+//plusOut
+describe("#plusOut()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(plusOut).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(plusOut("abcd", "abc")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not strings", () => {
+        expect(plusOut([], "")).to.equal("error");
+        expect(plusOut("", {})).to.equal("error");
+        expect(plusOut(1, "")).to.equal("error");
+        expect(plusOut("", undefined)).to.equal("error");
+        expect(plusOut(null, "")).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("given a string and a non-empty word string, returns a version of the original string where all the chars have been replaced with pluses '+', except for appearances of the word string which are preserved unchanged.", () => {
+        expect(plusOut("Hiabc", "abc")).to.equal("++abc");
+        expect(plusOut("Hi", "There")).to.equal("+++++++");
+        expect(plusOut("xxTherexx", "There")).to.equal("++There++");
+        expect(plusOut("xxx", "x")).to.equal("xxxx");
+        expect(plusOut("12xy34xyabcxy", "xy")).to.equal("++xy++xy+++xy");
+        expect(plusOut("abXYabcXYZ", "XY")).to.equal("++XY+++XY+");
+        expect(plusOut("aaxxxxbb", "xx")).to.equal("++xxxx++");
+      });
+    });
+  });
+});
