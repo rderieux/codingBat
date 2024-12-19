@@ -20,6 +20,7 @@ import oneTwo from "../src/string2/oneTwo.js";
 import zipZap from "../src/string2/zipZap.js";
 import starOut from "../src/string2/starOut.js";
 import plusOut from "../src/string2/plusOut.js";
+import wordEnds from "../src/string2/wordEnds.js";
 
 //doubleChar
 describe("#doubleChar()", () => {
@@ -737,8 +738,8 @@ describe("#wordEnds()", () => {
         expect(wordEnds("xxTherexx", "There")).to.equal("xx");
         expect(wordEnds("XY1XY", "XY")).to.equal("11");
         expect(wordEnds("", "xy")).to.equal("");
-        expect(wordEnds("abc1abc1abc", "abc")).to.equal("llll");
-        expect(wordEnds("abc1abc1abc", "b")).to.equal("acac");
+        expect(wordEnds("abc1abc1abc", "abc")).to.equal("1111");
+        expect(wordEnds("abc1xyz1abc", "b")).to.equal("acac");
       });
     });
   });
