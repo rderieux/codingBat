@@ -22,7 +22,7 @@ export default function starOut(str) {
   }
   return resultString;
 }
-/* the hard way yeesh.  I waaaay over complicated this.
+/* The hard way yeesh.  I waaaay over complicated this.
   let resultString = "";
   for (let i = 0; i < str.length; i++) {
     if (str[i] !== "*" && str[i + 1] === "*" && str[i + 2] !== "*") {
