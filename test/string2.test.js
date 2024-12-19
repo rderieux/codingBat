@@ -710,3 +710,36 @@ describe("#plusOut()", () => {
     });
   });
 });
+
+//wordEnds
+describe("#wordEnds()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(wordEnds).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(wordEnds("abcd", "abc")).to.be.a("string");
+    });
+    describe("receives the correct input", () => {
+      it("returns 'error' if the arguments are not strings", () => {
+        expect(wordEnds([], "")).to.equal("error");
+        expect(wordEnds("", {})).to.equal("error");
+        expect(wordEnds(1, "")).to.equal("error");
+        expect(wordEnds("", undefined)).to.equal("error");
+        expect(wordEnds(null, "")).to.equal("error");
+      });
+    });
+
+    describe("returns the correct string", () => {
+      it("returns a string made of each char just before and just after every appearance of the word in the string. Ignores cases where there is no char before or after the word, and a char may be included twice if it is between two words.", () => {
+        expect(wordEnds("abcXY123XYijk", "XY")).to.equal("c13i");
+        expect(wordEnds("XY123XY", "XY")).to.equal("13");
+        expect(wordEnds("xxTherexx", "There")).to.equal("xx");
+        expect(wordEnds("XY1XY", "XY")).to.equal("11");
+        expect(wordEnds("", "xy")).to.equal("");
+        expect(wordEnds("abc1abc1abc", "abc")).to.equal("llll");
+        expect(wordEnds("abc1abc1abc", "b")).to.equal("acac");
+      });
+    });
+  });
+});
