@@ -1,6 +1,7 @@
 import { expect } from "chai";
 
 import countYZ from "../src/string3/countYZ.js";
+import withoutString from "../src/string3/withoutString.js";
 
 //countYZ
 describe("#countYZ()", () => {
@@ -62,12 +63,14 @@ describe("#withoutString()", () => {
       it("given two strings, base and remove, returns a version of the base string where all instances of the remove string have been removed (not case sensitive). You may assume that the remove string is length 1 or more. Remove only non-overlapping instances, so with 'xxx' removing 'xx' leaves 'x'.", () => {
         expect(withoutString("Hello there", "llo")).to.equal("He there");
         expect(withoutString("xxx", "x")).to.equal("");
-        expect(withoutString("xxx", "xx")).to.equal("");
+        expect(withoutString("xxx", "xx")).to.equal("x");
         expect(withoutString("abcabc", "b")).to.equal("acac");
         expect(withoutString("AA22bb", "2")).to.equal("AAbb");
         expect(withoutString("MkjtMkx", "Mk")).to.equal("jtx");
         expect(withoutString("Hi HoHo", "Ho")).to.equal("Hi");
-        expect(withoutString("", "")).to.equal("");
+        expect(withoutString("This is a FISH", "IS")).to.equal("Th a FH");
+        expect(withoutString("THIS is a FISH", "is")).to.equal("TH a FH");
+        expect(withoutString("THIS is a FISH", "iS")).to.equal("TH a FH");
       });
     });
   });
