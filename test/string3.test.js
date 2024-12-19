@@ -11,7 +11,6 @@ describe("#countYZ()", () => {
     it("returns a number", () => {
       expect(countYZ("fez day")).to.be.a("number");
     });
-
     describe("receives the correct arg(s)", () => {
       it("returns 'error' if the arg is not a string", () => {
         expect(countYZ(1)).to.equal("error");
@@ -21,7 +20,6 @@ describe("#countYZ()", () => {
         expect(countYZ(undefined)).to.equal("error");
       });
     });
-
     describe("returns the correct number", () => {
       it("counts the number of words ending in 'y' or 'z'.  If there is not an alphabetic letter immediately following it.", () => {
         expect(countYZ("fez day")).to.equal(2);
@@ -32,6 +30,44 @@ describe("#countYZ()", () => {
         expect(countYZ("y2bz")).to.equal(2);
         expect(countYZ("aaz yyz my")).to.equal(3);
         expect(countYZ("zxyx")).to.equal(0);
+      });
+    });
+  });
+});
+
+//withoutString
+describe("#withoutString()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(withoutString).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(withoutString("Hello there", "llo")).to.be.a("string");
+    });
+    describe("receives the correct arg(s)", () => {
+      it("returns 'error' if the args are not strings", () => {
+        expect(withoutString(1, "")).to.equal("error");
+        expect(withoutString("", 1)).to.equal("error");
+        expect(withoutString([], "")).to.equal("error");
+        expect(withoutString("", [])).to.equal("error");
+        expect(withoutString({}, "")).to.equal("error");
+        expect(withoutString("", {})).to.equal("error");
+        expect(withoutString("", null)).to.equal("error");
+        expect(withoutString(null, "")).to.equal("error");
+        expect(withoutString("", undefined)).to.equal("error");
+        expect(withoutString(undefined, "")).to.equal("error");
+      });
+    });
+    describe("returns the correct string", () => {
+      it("given two strings, base and remove, returns a version of the base string where all instances of the remove string have been removed (not case sensitive). You may assume that the remove string is length 1 or more. Remove only non-overlapping instances, so with 'xxx' removing 'xx' leaves 'x'.", () => {
+        expect(withoutString("Hello there", "llo")).to.equal("He there");
+        expect(withoutString("xxx", "x")).to.equal("");
+        expect(withoutString("xxx", "xx")).to.equal("");
+        expect(withoutString("abcabc", "b")).to.equal("acac");
+        expect(withoutString("AA22bb", "2")).to.equal("AAbb");
+        expect(withoutString("MkjtMkx", "Mk")).to.equal("jtx");
+        expect(withoutString("Hi HoHo", "Ho")).to.equal("Hi");
+        expect(withoutString("", "")).to.equal("");
       });
     });
   });
