@@ -3,6 +3,7 @@ import { expect } from "chai";
 import countYZ from "../src/string3/countYZ.js";
 import withoutString from "../src/string3/withoutString.js";
 import equalIsNot from "../src/string3/equalIsNot.js";
+import gHappy from "../src/string3/gHappy.js";
 
 //countYZ
 describe("#countYZ()", () => {
@@ -135,7 +136,7 @@ describe("#gHappy()", () => {
         expect(gHappy("xxggxx")).to.equal(true);
         expect(gHappy("zzgzz")).to.equal(false);
         expect(gHappy("g")).to.equal(false);
-        expect(gHappy("")).to.equal(false);
+        expect(gHappy("")).to.equal(true);
         expect(gHappy("xxggyygxx")).to.equal(false);
         expect(gHappy("mgm")).to.equal(false);
         expect(gHappy("nagging")).to.equal(false);
