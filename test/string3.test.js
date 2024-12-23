@@ -5,6 +5,7 @@ import withoutString from "../src/string3/withoutString.js";
 import equalIsNot from "../src/string3/equalIsNot.js";
 import gHappy from "../src/string3/gHappy.js";
 import countTriple from "../src/string3/countTriple.js";
+import sumDigits from "../src/string3/sumDigits.js";
 
 //countYZ
 describe("#countYZ()", () => {
