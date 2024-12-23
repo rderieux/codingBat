@@ -2,6 +2,7 @@ import { expect } from "chai";
 
 import countYZ from "../src/string3/countYZ.js";
 import withoutString from "../src/string3/withoutString.js";
+import equalIsNot from "../src/string3/equalIsNot.js";
 
 //countYZ
 describe("#countYZ()", () => {
