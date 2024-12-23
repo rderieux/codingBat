@@ -7,6 +7,7 @@ import gHappy from "../src/string3/gHappy.js";
 import countTriple from "../src/string3/countTriple.js";
 import sumDigits from "../src/string3/sumDigits.js";
 import sameEnds from "../src/string3/sameEnds.js";
+import mirrorEnds from "../src/string3/mirrorEnds.js";
 
 //countYZ
 describe("#countYZ()", () => {
@@ -332,8 +333,8 @@ describe("#mirrorEnds()", () => {
     it("returns 'xxYxx' for 'xxYxx'", () => {
       expect(mirrorEnds("xxYxx")).to.equal("xxYxx");
     });
-    it("returns 'Hi' for 'Hi and iH'", () => {
-      expect(mirrorEnds("Hi and iH")).to.equal("Hi");
+    it("returns 'Hi ' for 'Hi and iH'", () => {
+      expect(mirrorEnds("Hi and iH")).to.equal("Hi ");
     });
     it("returns 'x' for 'x'", () => {
       expect(mirrorEnds("x")).to.equal("x");
