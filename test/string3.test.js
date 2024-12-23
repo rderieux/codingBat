@@ -75,3 +75,37 @@ describe("#withoutString()", () => {
     });
   });
 });
+
+//equalIsNot
+describe("#equalIsNot()", () => {
+  describe("it works with correct types", () => {
+    it("is a function", () => {
+      expect(equalIsNot).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(equalIsNot("This is not")).to.be.a("boolean");
+    });
+    describe("receives the correct arg", () => {
+      it("returns 'error' if the arg is not a string", () => {
+        expect(equalIsNot(1)).to.equal("error");
+        expect(equalIsNot([])).to.equal("error");
+        expect(equalIsNot({})).to.equal("error");
+        expect(equalIsNot()).to.equal("error");
+        expect(equalIsNot(null)).to.equal("error");
+        expect(equalIsNot(undefined)).to.equal("error");
+      });
+    });
+    describe("returns the correct boolean", () => {
+      it("returns true if the number of times 'is' appears in the string matches the number of times 'not' appears.  Case sensitive.", () => {
+        expect(equalIsNot("This is not")).to.equal(false);
+        expect(equalIsNot("This is not not")).to.equal(true);
+        expect(equalIsNot("xxxyyyzzzintint")).to.equal(true);
+        expect(equalIsNot("noisxxnotyynotxsi")).to.equal(false);
+        expect(equalIsNot("isisnotnot")).to.equal(true);
+        expect(equalIsNot("isnotis")).to.equal(false);
+        expect(equalIsNot("not not is")).to.equal(false);
+        expect(equalIsNot("xxxyyyzzzintint")).to.equal(true);
+      });
+    });
+  });
+});
