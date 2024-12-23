@@ -147,3 +147,38 @@ describe("#gHappy()", () => {
     });
   });
 });
+
+//countTriple
+describe("#countTriple()", () => {
+  describe("it works with correct types", () => {
+    it("is a function", () => {
+      expect(countTriple).to.be.a("function");
+    });
+    it("returns a number", () => {
+      expect(countTriple("xxx")).to.be.a("number");
+    });
+  });
+  describe("it receives the correct arg", () => {
+    it("returns 'error' if the arg is not a number", () => {
+      expect(countTriple()).to.equal("error");
+      expect(countTriple(1)).to.equal("error");
+      expect(countTriple([])).to.equal("error");
+      expect(countTriple({})).to.equal("error");
+      expect(countTriple(null)).to.equal("error");
+      expect(countTriple(undefined)).to.equal("error");
+    });
+  });
+  describe("it returns the correct number", () => {
+    it("returns a number of how many times a character appears three times in a row.  The triples may overlap", () => {
+      expect(countTriple("abc123abc")).to.equal(0);
+      expect(countTriple("xxx")).to.equal(1);
+      expect(countTriple("xxxabyyyycd")).to.equal(3);
+      expect(countTriple("abYYYabXXXXXab")).to.equal(4);
+      expect(countTriple("abYYXabXXYXXab")).to.equal(0);
+      expect(countTriple("122abhhh2")).to.equal(1);
+      expect(countTriple("XXXabc")).to.equal(1);
+      expect(countTriple("a")).to.equal(0);
+      expect(countTriple("")).to.equal(0);
+    });
+  });
+});
