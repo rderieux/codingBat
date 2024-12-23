@@ -248,3 +248,48 @@ describe("#sumDigits()", () => {
     });
   });
 });
+
+//sameEnds
+describe("#sameEnds()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(sameEnds).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(sameEnds("abc")).to.be.a("string");
+    });
+  });
+  describe("receives the correct arg", () => {
+    it("returns 'error' if the arg is not a string", () => {
+      expect(sameEnds()).to.equal("error");
+      expect(sameEnds(1)).to.equal("error");
+      expect(sameEnds([])).to.equal("error");
+      expect(sameEnds({})).to.equal("error");
+      expect(sameEnds(null)).to.equal("error");
+      expect(sameEnds(undefined)).to.equal("error");
+    });
+  });
+  describe("returns the correct boolean", () => {
+    it("returns 'ab' for 'abXYab'", () => {
+      expect(sameEnds("abXYab")).to.equal("ab");
+    });
+    it("returns 'x' for 'xx'", () => {
+      expect(sameEnds("xx")).to.equal("x");
+    });
+    it("returns 'x' for 'xxx'", () => {
+      expect(sameEnds("xxx")).to.equal("x");
+    });
+    it("returns 'xx' for 'xxxx'", () => {
+      expect(sameEnds("xxxx")).to.equal("xx");
+    });
+    it("returns 'java' for 'javaXYZjava'", () => {
+      expect(sameEnds("javaXYZjava")).to.equal("java");
+    });
+    it("returns '' for 'xavaXYZjava'", () => {
+      expect(sameEnds("xavaXYZjava")).to.equal("");
+    });
+    it("returns 'my' for 'mymmy'", () => {
+      expect(sameEnds("mymmy")).to.equal("my");
+    });
+  });
+});
