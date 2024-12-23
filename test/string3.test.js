@@ -4,6 +4,7 @@ import countYZ from "../src/string3/countYZ.js";
 import withoutString from "../src/string3/withoutString.js";
 import equalIsNot from "../src/string3/equalIsNot.js";
 import gHappy from "../src/string3/gHappy.js";
+import countTriple from "../src/string3/countTriples.js";
 
 //countYZ
 describe("#countYZ()", () => {
