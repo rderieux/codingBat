@@ -110,3 +110,39 @@ describe("#equalIsNot()", () => {
     });
   });
 });
+
+//gHappy
+describe("#gHappy()", () => {
+  describe("it works with correct types", () => {
+    it("is a function", () => {
+      expect(gHappy).to.be.a("function");
+    });
+    it("returns a boolean", () => {
+      expect(gHappy("a;lsdkfj")).to.be.a("boolean");
+    });
+    describe("it receives the correct arg", () => {
+      it("returns 'error' if the arg is not a string", () => {
+        expect(gHappy(1)).to.equal("error");
+        expect(gHappy()).to.equal("error");
+        expect(gHappy([])).to.equal("error");
+        expect(gHappy({})).to.equal("error");
+        expect(gHappy(null)).to.equal("error");
+        expect(gHappy(undefined)).to.equal("error");
+      });
+    });
+    describe(" it returns the correct boolean", () => {
+      it("returns true if, when there is a 'g' in the string, it has another 'g' to it's left or right, else false", () => {
+        expect(gHappy("xxggxx")).to.equal(true);
+        expect(gHappy("zzgzz")).to.equal(false);
+        expect(gHappy("g")).to.equal(false);
+        expect(gHappy("")).to.equal(false);
+        expect(gHappy("xxggyygxx")).to.equal(false);
+        expect(gHappy("mgm")).to.equal(false);
+        expect(gHappy("nagging")).to.equal(false);
+        expect(gHappy("mggm")).to.equal(true);
+        expect(gHappy("g")).to.equal(false);
+        expect(gHappy("gg")).to.equal(true);
+      });
+    });
+  });
+});

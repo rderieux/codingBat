@@ -24,7 +24,7 @@ export default function equalIsNot(str) {
   let notLowercaseCount = 0;
   let isUppercaseCount = 0;
   let notUppercaseCount = 0;
-  debugger;
+
   for (let i = 0; i < str.length - 1; i++) {
     const strSliceForIs = str.slice(i, i + 2);
     const strSliceForNot = str.slice(i, i + 3);
