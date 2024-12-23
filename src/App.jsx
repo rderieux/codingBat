@@ -6,12 +6,13 @@ import "./App.css";
 import equalIsNot from "./string3/equalIsNot.js";
 import gHappy from "./string3/gHappy.js";
 import sumDigits from "./string3/sumDigits.js";
+import sameEnds from "./string3/sameEnds.js";
 
 function App() {
   return (
     <>
       <h1>Hello World</h1>
-      <h2>{sumDigits("aa1bc2d3")}</h2>
+      <h2>{sameEnds("xavaXYZjava")}</h2>
     </>
   );
 }
