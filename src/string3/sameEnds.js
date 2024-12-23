@@ -12,9 +12,7 @@ export default function sameEnds(str) {
   // initialize a frontString, set value from the front of 'str' to index,
   // and a backString, set value from tail minus index number
   // if frontString is equal to backString,
-  // assign frontString to resultString
-  // "abXYab" becomes "abX" and "Yab"
-  // then "ab" and "ab"
+  // set resultString to frontString value
   // return frontString
   if (typeof str !== "string") {
     return "error";

@@ -294,3 +294,52 @@ describe("#sameEnds()", () => {
     });
   });
 });
+
+//mirrorEnds
+describe("#mirrorEnds()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(mirrorEnds).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(mirrorEnds("")).to.be.a("string");
+    });
+    it("returns 'error' if the arg is not a string", () => {
+      expect(mirrorEnds()).to.equal("error");
+      expect(mirrorEnds(1)).to.equal("error");
+      expect(mirrorEnds([])).to.equal("error");
+      expect(mirrorEnds({})).to.equal("error");
+      expect(mirrorEnds(null)).to.equal("error");
+      expect(mirrorEnds(undefined)).to.equal("error");
+    });
+  });
+  describe("returns the correct string", () => {
+    it("returns 'ab' for 'abXYZba'", () => {
+      expect(mirrorEnds("abXYZba")).to.equal("ab");
+    });
+    it("returns 'a' for 'abca'", () => {
+      expect(mirrorEnds("abca")).to.equal("a");
+    });
+    it("returns 'aba' for 'aba'", () => {
+      expect(mirrorEnds("aba")).to.equal("aba");
+    });
+    it("returns '' for 'abab'", () => {
+      expect(mirrorEnds("abab")).to.equal("");
+    });
+    it("returns 'xxx' for 'xxx'", () => {
+      expect(mirrorEnds("xxx")).to.equal("xxx");
+    });
+    it("returns 'xxYxx' for 'xxYxx'", () => {
+      expect(mirrorEnds("xxYxx")).to.equal("xxYxx");
+    });
+    it("returns 'Hi' for 'Hi and iH'", () => {
+      expect(mirrorEnds("Hi and iH")).to.equal("Hi");
+    });
+    it("returns 'x' for 'x'", () => {
+      expect(mirrorEnds("x")).to.equal("x");
+    });
+    it("returns 'ba' for 'band andab'", () => {
+      expect(mirrorEnds("band andab")).to.equal("ba");
+    });
+  });
+});
