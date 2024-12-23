@@ -4,7 +4,7 @@ import countYZ from "../src/string3/countYZ.js";
 import withoutString from "../src/string3/withoutString.js";
 import equalIsNot from "../src/string3/equalIsNot.js";
 import gHappy from "../src/string3/gHappy.js";
-import countTriple from "../src/string3/countTriples.js";
+import countTriple from "../src/string3/countTriple.js";
 
 //countYZ
 describe("#countYZ()", () => {
@@ -170,16 +170,80 @@ describe("#countTriple()", () => {
     });
   });
   describe("it returns the correct number", () => {
-    it("returns a number of how many times a character appears three times in a row.  The triples may overlap", () => {
+    it("returns 0 for 'abc123abc'", () => {
       expect(countTriple("abc123abc")).to.equal(0);
+    });
+    it("returns 1 for 'xxx'", () => {
       expect(countTriple("xxx")).to.equal(1);
+    });
+    it("returns 3 for 'xxxabyyyycd'", () => {
       expect(countTriple("xxxabyyyycd")).to.equal(3);
+    });
+    it("returns 4 for 'abYYYabXXXXXab'", () => {
       expect(countTriple("abYYYabXXXXXab")).to.equal(4);
+    });
+    it("returns 0 for 'abYYXabXXYXXab'", () => {
       expect(countTriple("abYYXabXXYXXab")).to.equal(0);
+    });
+    it("returns 1 for '122abhhh2'", () => {
       expect(countTriple("122abhhh2")).to.equal(1);
+    });
+    it("returns 1 for 'XXXabc'", () => {
       expect(countTriple("XXXabc")).to.equal(1);
+    });
+    it("returns 0 for 'a'", () => {
       expect(countTriple("a")).to.equal(0);
+    });
+    it("returns 0 for an empty string", () => {
       expect(countTriple("")).to.equal(0);
+    });
+  });
+});
+
+//sumDigits
+describe("#sumDigits()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(sumDigits).to.be.a("function");
+    });
+    it("returns a number", () => {
+      expect(sumDigits("a123bc")).to.be.a("number");
+    });
+  });
+  describe("receives the correct arg", () => {
+    it("returns 'error' if not given a string arg", () => {
+      expect(sumDigits()).to.equal("error");
+      expect(sumDigits(1)).to.equal("error");
+      expect(sumDigits([])).to.equal("error");
+      expect(sumDigits({})).to.equal("error");
+      expect(sumDigits(null)).to.equal("error");
+      expect(sumDigits(undefined)).to.equal("error");
+    });
+  });
+  describe("returns the correct number", () => {
+    it("returns 6 for 'aa1bc2d3'", () => {
+      expect(sumDigits("aa1bc2d3")).to.equal(6);
+    });
+    it("returns 8 for 'aa11b33'", () => {
+      expect(sumDigits("aa11b33")).to.equal(8);
+    });
+    it("returns 0 for 'Robert'", () => {
+      expect(sumDigits("Robert")).to.equal(0);
+    });
+    it("returns 7 for '5hoco1a1e'", () => {
+      expect(sumDigits("5hoco1a1e")).to.equal(7);
+    });
+    it("returns 12 for '123abc123'", () => {
+      expect(sumDigits("123abc123")).to.equal(12);
+    });
+    it("returns 0 for ''", () => {
+      expect(sumDigits("")).to.equal(0);
+    });
+    it("returns 12 for 'X1z9b2'", () => {
+      expect(sumDigits("X1z9b2")).to.equal(12);
+    });
+    it("returns 14 for '5432a'", () => {
+      expect(sumDigits("5432a")).to.equal(14);
     });
   });
 });
