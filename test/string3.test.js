@@ -8,6 +8,7 @@ import countTriple from "../src/string3/countTriple.js";
 import sumDigits from "../src/string3/sumDigits.js";
 import sameEnds from "../src/string3/sameEnds.js";
 import mirrorEnds from "../src/string3/mirrorEnds.js";
+import maxBlock from "../src/string3/maxBlock.js";
 
 //countYZ
 describe("#countYZ()", () => {

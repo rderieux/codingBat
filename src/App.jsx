@@ -7,12 +7,13 @@ import equalIsNot from "./string3/equalIsNot.js";
 import gHappy from "./string3/gHappy.js";
 import sumDigits from "./string3/sumDigits.js";
 import sameEnds from "./string3/sameEnds.js";
+import maxBlock from "./string3/maxBlock.js";
 
 function App() {
   return (
     <>
       <h1>Hello World</h1>
-      <h2>{sameEnds("xavaXYZjava")}</h2>
+      <h2>{maxBlock("greeeeeeat!!!")}</h2>
     </>
   );
 }
