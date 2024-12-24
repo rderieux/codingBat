@@ -344,3 +344,49 @@ describe("#mirrorEnds()", () => {
     });
   });
 });
+
+//maxBlock
+describe("#maxBlock()", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(maxBlock).to.be.a("function");
+    });
+    it("returns a number", () => {
+      expect(maxBlock("")).to.be.a("number");
+    });
+    it("returns 'error' if the arg is not a string", () => {
+      expect(maxBlock()).to.equal("error");
+      expect(maxBlock(1)).to.equal("error");
+      expect(maxBlock([])).to.equal("error");
+      expect(maxBlock({})).to.equal("error");
+      expect(maxBlock(null)).to.equal("error");
+      expect(maxBlock(undefined)).to.equal("error");
+    });
+  });
+  describe("returns the correct number", () => {
+    it("returns 2 from 'cherrios'", () => {
+      expect(maxBlock("cherrios")).to.equal(2);
+    });
+    it("returns 6 from 'greeeeeeat!!!'", () => {
+      expect(maxBlock("greeeeeeat!!!")).to.equal(6);
+    });
+    it("returns 0 from ''", () => {
+      expect(maxBlock("")).to.equal(0);
+    });
+    it("returns 1 from 'abc'", () => {
+      expect(maxBlock("abc")).to.equal(1);
+    });
+    it("returns 3 from 'abbbcbbbxbbbx'", () => {
+      expect(maxBlock("abbbcbbbxbbbx")).to.equal(3);
+    });
+    it("returns 4 from 'XXBBBBbbxx'", () => {
+      expect(maxBlock("XXBBBBbbxx")).to.equal(4);
+    });
+    it("returns 4 from 'XXBBBbbxxXXXX'", () => {
+      expect(maxBlock("XXBBBbbxxXXXX")).to.equal(4);
+    });
+    it("returns 5 from 'XX2222BBBbbXX22222'", () => {
+      expect(maxBlock("XX2222BBBbbXX22222")).to.equal(5);
+    });
+  });
+});
