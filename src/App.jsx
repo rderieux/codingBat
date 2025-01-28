@@ -9,7 +9,7 @@ import sumDigits from "./string3/sumDigits.js";
 import sameEnds from "./string3/sameEnds.js";
 import maxBlock from "./string3/maxBlock.js";
 
-function App() {
+export default function App() {
   return (
     <>
       <h1>Hello World</h1>
@@ -17,5 +17,3 @@ function App() {
     </>
   );
 }
-
-export default App;

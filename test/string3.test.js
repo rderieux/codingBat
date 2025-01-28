@@ -9,6 +9,7 @@ import sumDigits from "../src/string3/sumDigits.js";
 import sameEnds from "../src/string3/sameEnds.js";
 import mirrorEnds from "../src/string3/mirrorEnds.js";
 import maxBlock from "../src/string3/maxBlock.js";
+import sumNumbers from "../src/string3/sumNumbers.js";
 
 //countYZ
 describe("#countYZ()", () => {
@@ -388,6 +389,51 @@ describe("#maxBlock()", () => {
     });
     it("returns 5 from 'XX2222BBBbbXX22222'", () => {
       expect(maxBlock("XX2222BBBbbXX22222")).to.equal(5);
+    });
+  });
+});
+
+describe("#sumNumbers", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(sumNumbers).to.be.a("function");
+    });
+    it("returns a number", () => {
+      expect(sumNumbers("")).to.be.a("number");
+    });
+    it("returns 'error' if the arg is not a number", () => {
+      expect(sumNumbers()).to.equal("error");
+      expect(sumNumbers(1)).to.equal("error");
+      expect(sumNumbers([])).to.equal("error");
+      expect(sumNumbers({})).to.equal("error");
+      expect(sumNumbers(null)).to.equal("error");
+      expect(sumNumbers(undefined)).to.equal("error");
+    });
+  });
+  describe("returns the correct number", () => {
+    it("returns 123 from 'abc123xyz'", () => {
+      expect(sumNumbers("abc123xyz")).to.equal(123);
+    });
+    it("returns 44 from 'aa11b33'", () => {
+      expect(sumNumbers("aa11b33")).to.equal(44);
+    });
+    it("returns 18 from '7 11'", () => {
+      expect(sumNumbers("7 11")).to.equal(18);
+    });
+    it("returns 7 from '5hoco1a1e'", () => {
+      expect(sumNumbers("5hoco1a1e")).to.equal(7);
+    });
+    it("returns 246 from '123abc123'", () => {
+      expect(sumNumbers("123abc123")).to.equal(246);
+    });
+    it("returns 0 from ''", () => {
+      expect(sumNumbers("")).to.equal(0);
+    });
+    it("returns 12 from 'X1z9b2'", () => {
+      expect(sumNumbers("X1z9b2")).to.equal(12);
+    });
+    it("returns 5432 from '5432a'", () => {
+      expect(sumNumbers("5432a")).to.equal(5432);
     });
   });
 });
