@@ -393,6 +393,7 @@ describe("#maxBlock()", () => {
   });
 });
 
+//sumNumbers
 describe("#sumNumbers", () => {
   describe("works with correct types", () => {
     it("is a function", () => {
@@ -434,6 +435,49 @@ describe("#sumNumbers", () => {
     });
     it("returns 5432 from '5432a'", () => {
       expect(sumNumbers("5432a")).to.equal(5432);
+    });
+  });
+});
+
+//notReplace
+describe("#notReplace", () => {
+  describe("works with correct types", () => {
+    it("is a function", () => {
+      expect(notReplace).to.be.a("function");
+    });
+    it("returns a string", () => {
+      expect(notReplace("")).to.be.a("string");
+    });
+    it("returns 'error' if the arg is not a string", () => {
+      expect(notReplace()).to.equal("error");
+      expect(notReplace(1)).to.equal("error");
+      expect(notReplace([])).to.equal("error");
+      expect(notReplace({})).to.equal("error");
+      expect(notReplace(null)).to.equal("error");
+      expect(notReplace(undefined)).to.equal("error");
+    });
+  });
+  describe("returns the correct string", () => {
+    it("returns 'is not test' from 'is test'", () => {
+      expect(notReplace("is test")).to.equal("is not test");
+    });
+    it("returns 'is not-is not test' from 'is-is test'", () => {
+      expect(notReplace("is-is test")).to.equal("is not-is not test");
+    });
+    it("returns 'This is not right' from 'This is right'", () => {
+      expect(notReplace("This is right")).to.equal("This is not right");
+    });
+    it("returns 'This is not isabell' from 'This is isabell'", () => {
+      expect(notReplace("This is isabell")).to.equal("This is not isabell");
+    });
+    it("returns 'is not' from 'is'", () => {
+      expect(notReplace("is")).to.equal("is not");
+    });
+    it("returns 'isis' from 'isis'", () => {
+      expect(notReplace("isis")).to.equal("isis");
+    });
+    it("returns 'Dis is not bliss is' from 'Dis is bliss is'", () => {
+      expect(notReplace("Dis is bliss is")).to.equal("Dis is not bliss is");
     });
   });
 });
