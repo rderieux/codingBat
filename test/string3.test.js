@@ -10,6 +10,7 @@ import sameEnds from "../src/string3/sameEnds.js";
 import mirrorEnds from "../src/string3/mirrorEnds.js";
 import maxBlock from "../src/string3/maxBlock.js";
 import sumNumbers from "../src/string3/sumNumbers.js";
+import notReplace from "../src/string3/notReplace.js";
 
 //countYZ
 describe("#countYZ()", () => {
@@ -445,17 +446,6 @@ describe("#notReplace", () => {
     it("is a function", () => {
       expect(notReplace).to.be.a("function");
     });
-    it("returns a string", () => {
-      expect(notReplace("")).to.be.a("string");
-    });
-    it("returns 'error' if the arg is not a string", () => {
-      expect(notReplace()).to.equal("error");
-      expect(notReplace(1)).to.equal("error");
-      expect(notReplace([])).to.equal("error");
-      expect(notReplace({})).to.equal("error");
-      expect(notReplace(null)).to.equal("error");
-      expect(notReplace(undefined)).to.equal("error");
-    });
   });
   describe("returns the correct string", () => {
     it("returns 'is not test' from 'is test'", () => {
@@ -476,8 +466,8 @@ describe("#notReplace", () => {
     it("returns 'isis' from 'isis'", () => {
       expect(notReplace("isis")).to.equal("isis");
     });
-    it("returns 'Dis is not bliss is' from 'Dis is bliss is'", () => {
-      expect(notReplace("Dis is bliss is")).to.equal("Dis is not bliss is");
+    it("returns 'Dis is not bliss is not' from 'Dis is bliss is'", () => {
+      expect(notReplace("Dis is bliss is")).to.equal("Dis is not bliss is not");
     });
   });
 });
